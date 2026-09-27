@@ -1,164 +1,168 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AlienX SMM - Best Social Media Marketing Panel</title>
+    <title>SMM Panel - Login & Signup</title>
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-        body { background-color: #0b0f19; color: #f3f4f6; display: flex; flex-direction: column; min-height: 100vh; }
-        header { background-color: #111827; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1f2937; }
-        .logo { font-size: 22px; font-weight: bold; color: #60a5fa; text-transform: uppercase; letter-spacing: 1px; }
-        .nav-links a { color: #9ca3af; text-decoration: none; margin-left: 20px; font-size: 14px; cursor: pointer; }
-        .nav-links a:hover { color: #ffffff; }
-        .container { max-width: 900px; width: 100%; margin: 40px auto; padding: 0 20px; flex: 1; }
-        .hero { text-align: center; margin-bottom: 30px; }
-        .hero h1 { font-size: 28px; color: #ffffff; margin-bottom: 10px; }
-        .hero p { color: #9ca3af; font-size: 14px; }
-        .card { background-color: #111827; border: 1px solid #1f2937; border-radius: 12px; padding: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.3); margin-bottom: 20px; }
-        .form-group { margin-bottom: 20px; }
-        label { display: block; font-size: 13px; color: #9ca3af; margin-bottom: 8px; font-weight: 500; }
-        select, input { width: 100%; padding: 12px; background-color: #1f2937; border: 1px solid #374151; border-radius: 8px; color: #ffffff; font-size: 14px; outline: none; }
-        select:focus, input:focus { border-color: #60a5fa; }
-        .price-box { background-color: #1f2937; padding: 15px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; font-size: 14px; }
-        .price-box span { color: #60a5fa; font-weight: bold; font-size: 18px; }
-        button { background-color: #2563eb; color: #ffffff; border: none; width: 100%; padding: 14px; border-radius: 8px; font-weight: bold; font-size: 15px; cursor: pointer; transition: background 0.2s; }
-        button:hover { background-color: #1d4ed8; }
-        #successMsg, #fundMsg { display: none; margin-top: 15px; padding: 12px; background-color: #065f46; color: #6ee7b7; border-radius: 8px; text-align: center; font-size: 14px; }
-        .qr-container { text-align: center; margin-top: 15px; }
-        .qr-container img { width: 180px; height: 180px; border-radius: 8px; border: 2px solid #374151; background: #fff; padding: 5px; }
-        footer { text-align: center; padding: 20px; color: #6b7280; font-size: 13px; border-top: 1px solid #1f2937; background-color: #111827; }
+        body { font-family: Arial, sans-serif; background: #0f172a; color: #fff; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .container { background: #1e293b; padding: 25px; border-radius: 12px; width: 320px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+        h2 { text-align: center; margin-bottom: 20px; color: #38bdf8; }
+        input { width: 100%; padding: 10px; margin: 8px 0; background: #0f172a; border: 1px solid #334155; color: #fff; border-radius: 6px; box-sizing: border-box; }
+        button { width: 100%; padding: 10px; background: #38bdf8; border: none; color: #0f172a; font-weight: bold; border-radius: 6px; cursor: pointer; margin-top: 10px; }
+        button:hover { background: #0ea5e9; }
+        .hidden { display: none; }
+        .toggle-btn { background: none; border: none; color: #38bdf8; cursor: pointer; text-align: center; width: 100%; margin-top: 15px; }
     </style>
 </head>
 <body>
-    <header>
-        <div class="logo">AlienX SMM</div>
-        <div class="nav-links">
-            <a onclick="showTab('order')">New Order</a>
-            <a onclick="showTab('funds')">Add Funds</a>
-            <a href="#">Support</a>
-        </div>
-    </header>
 
-    <div class="container">
-        <!-- New Order Section -->
-        <div id="orderSection" class="card">
-            <div class="hero" style="margin-bottom: 20px;">
-                <h1>Create New Order</h1>
-                <p>Boost your social media presence instantly.</p>
-            </div>
-            <div class="form-group">
-                <label>Select Category</label>
-                <select id="category" onchange="updateServices()">
-                    <option value="insta">Instagram Services</option>
-                    <option value="yt">YouTube Services</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label>Select Service</label>
-                <select id="service" onchange="calculateTotal()">
-                    <option value="120">Instagram Followers (HQ) - ₹120 per 1000</option>
-                    <option value="50">Instagram Reel Likes - ₹50 per 1000</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label>Target Link</label>
-                <input type="text" id="targetLink" placeholder="https://www.instagram.com/p/...">
-            </div>
-
-            <div class="form-group">
-                <label>Quantity</label>
-                <input type="number" id="quantity" value="1000" min="100" max="50000" oninput="calculateTotal()">
-            </div>
-
-            <div class="price-box">
-                Total Price: <span id="totalPrice">₹120.00</span>
-            </div>
-
-            <button onclick="placeOrder()">Place Order</button>
-            <div id="successMsg">Order Placed Successfully! Processing...</div>
+    <div class="container" id="auth-container">
+        <!-- साइन अप फॉर्म -->
+        <div id="signup-box">
+            <h2>खाता बनाएँ (Sign Up)</h2>
+            <input type="text" id="signup-username" placeholder="यूज़रनेम दर्ज करें">
+            <input type="email" id="signup-email" placeholder="ईमेल दर्ज करें">
+            <input type="password" id="signup-password" placeholder="पासवर्ड दर्ज करें">
+            <button onclick="handleSignUp()">रजिस्टर करें</button>
+            <button class="toggle-btn" onclick="toggleForm('login')">पहले से खाता है? लॉगिन करें</button>
         </div>
 
-        <!-- Add Funds Section (QR Code) -->
-        <div id="fundsSection" class="card" style="display: none;">
-            <div class="hero" style="margin-bottom: 20px;">
-                <h1>Add Funds via UPI QR</h1>
-                <p>Scan the QR code below using any UPI App (GPay, PhonePe, Paytm) and enter the Transaction ID (UTR).</p>
-            </div>
-            
-            <div class="qr-container">
-                <img src="https://i.postimg.cc/zfyZqc1c/Screenshot-2026-09-27-10-49-06-59-ba41e9a642e6e0e203656fbbf7d5e4.jpg" alt="UPI QR Code">
-                <p style="margin-top: 10px; color: #60a5fa; font-weight: bold;">UPI ID: arthikhuyaaar@fam</p>
-            </div>
-
-            <div class="form-group" style="margin-top: 20px;">
-                <label>Enter Transaction ID / UTR Number</label>
-                <input type="text" id="utrInput" placeholder="Enter 12-digit UTR number after payment">
-            </div>
-
-            <button onclick="submitFunds()">Verify & Add Funds</button>
-            <div id="fundMsg">Funds request submitted! Balance will update after verification.</div>
+        <!-- लॉगिन फॉर्म -->
+        <div id="login-box" class="hidden">
+            <h2>लॉगिन करें (Login)</h2>
+            <input type="email" id="login-email" placeholder="ईमेल दर्ज करें">
+            <input type="password" id="login-password" placeholder="पासवर्ड दर्ज करें">
+            <button onclick="handleLogin()">लॉगिन करें</button>
+            <button class="toggle-btn" onclick="toggleForm('signup')">नया खाता बनाएँ</button>
         </div>
     </div>
 
-    <footer>
-        &copy; 2026 AlienX SMM Panel. All rights reserved.
-    </footer>
+    <!-- डैशबोर्ड (लॉगिन के बाद दिखने वाला हिस्सा) -->
+    <div class="container hidden" id="dashboard-container">
+        <h2>स्वागत है! 🎉</h2>
+        <p>यूज़रनेम: <span id="user-display"></span></p>
+        <p>फॉलोअर्स काउंट: <span id="followers-display">0</span></p>
+        <button onclick="increaseFollowers()">फ्री फॉलोअर्स बढ़ाएं (+10)</button>
+        <button style="background: #ef4444; color: #fff; margin-top: 20px;" onclick="handleLogout()">लॉगआउट</button>
+    </div>
 
-    <script>
-        function showTab(tab) {
-            if (tab === 'order') {
-                document.getElementById('orderSection').style.display = 'block';
-                document.getElementById('fundsSection').style.display = 'none';
+    <!-- Firebase SDKs -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+        import { getFirestore, doc, setDoc, getDoc, updateDoc, increment } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+        // आपकी Firebase कॉन्फ़िगरेशन
+        const firebaseConfig = {
+          apiKey: "AIzaSyAA5-wzmHpGLtTkDgCNJ6ZH-Gn...",
+          authDomain: "smm-pannel-9f14f.firebaseapp.com",
+          projectId: "smm-pannel-9f14f",
+          storageBucket: "smm-pannel-9f14f.appspot.com",
+          messagingSenderId: "218974351889",
+          appId: "1:218974351889:web:30c410a2171b9...",
+          measurementId: "G-LC19PSLG2M"
+        };
+
+        // Firebase इनिशियलाइज करें
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        let currentUserUid = null;
+
+        // फॉर्म स्विच करने का फंक्शन
+        window.toggleForm = function(type) {
+            if(type === 'login') {
+                document.getElementById('signup-box').classList.add('hidden');
+                document.getElementById('login-box').classList.remove('hidden');
             } else {
-                document.getElementById('orderSection').style.display = 'none';
-                document.getElementById('fundsSection').style.display = 'block';
+                document.getElementById('login-box').classList.add('hidden');
+                document.getElementById('signup-box').classList.remove('hidden');
             }
         }
 
-        function updateServices() {
-            const cat = document.getElementById('category').value;
-            const serviceSelect = document.getElementById('service');
-            serviceSelect.innerHTML = '';
-            
-            if (cat === 'insta') {
-                serviceSelect.innerHTML = `
-                    <option value="120">Instagram Followers (HQ) - ₹120 per 1000</option>
-                    <option value="50">Instagram Reel Likes - ₹50 per 1000</option>
-                `;
-            } else {
-                serviceSelect.innerHTML = `
-                    <option value="300">YouTube Subscribers - ₹300 per 1000</option>
-                    <option value="150">YouTube Video Views - ₹150 per 1000</option>
-                `;
+        // साइन-अप फंक्शन
+        window.handleSignUp = async function() {
+            const username = document.getElementById('signup-username').value;
+            const email = document.getElementById('signup-email').value;
+            const password = document.getElementById('signup-password').value;
+
+            try {
+                const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+                const user = userCredential.user;
+                
+                // Firestore में यूज़र का डेटा सेव करें
+                await setDoc(doc(db, "users", user.uid), {
+                    username: username,
+                    email: email,
+                    followersCount: 0,
+                    createdAt: new Date()
+                });
+                
+                alert("अकाउंट सफलतापूर्वक बन गया!");
+            } catch (error) {
+                alert("एरर: " + error.message);
             }
-            calculateTotal();
         }
 
-        function calculateTotal() {
-            const rate = parseFloat(document.getElementById('service').value);
-            const qty = parseInt(document.getElementById('quantity').value) || 0;
-            const total = (rate * qty) / 1000;
-            document.getElementById('totalPrice').textContent = '₹' + total.toFixed(2);
+        // लॉगिन फंक्शन
+        window.handleLogin = async function() {
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+
+            try {
+                await signInWithEmailAndPassword(auth, email, password);
+                alert("लॉगिन सफल रहा!");
+            } catch (error) {
+                alert("लॉगिन फेल: " + error.message);
+            }
         }
 
-        function placeOrder() {
-            const link = document.getElementById('targetLink').value.trim();
-            const msg = document.getElementById('successMsg');
-            if (!link) { alert('Please enter a valid target link.'); return; }
-            msg.style.display = 'block';
-            setTimeout(() => { msg.style.display = 'none'; document.getElementById('targetLink').value = ''; }, 4000);
+        // लॉगआउट फंक्शन
+        window.handleLogout = async function() {
+            await signOut(auth);
+            alert("लॉगआउट हो गए!");
         }
 
-        function submitFunds() {
-            const utr = document.getElementById('utrInput').value.trim();
-            const msg = document.getElementById('fundMsg');
-            if (!utr) { alert('Please enter transaction UTR number.'); return; }
-            msg.style.display = 'block';
-            setTimeout(() => { msg.style.display = 'none'; document.getElementById('utrInput').value = ''; }, 4000);
+        // फॉलोअर्स बढ़ाने का फंक्शन
+        window.increaseFollowers = async function() {
+            if (!currentUserUid) return;
+            try {
+                const userRef = doc(db, "users", currentUserUid);
+                await updateDoc(userRef, {
+                    followersCount: increment(10)
+                });
+                alert("10 फॉलोअर्स सफलतापूर्वक जोड़ दिए गए हैं!");
+                loadUserData(currentUserUid);
+            } catch (error) {
+                alert("फॉलोअर्स अपडेट करने में एरर: " + error.message);
+            }
         }
+
+        // यूज़र डेटा लोड करने का फंक्शन
+        async function loadUserData(uid) {
+            const userDoc = await getDoc(doc(db, "users", uid));
+            if (userDoc.exists()) {
+                const data = userDoc.data();
+                document.getElementById('user-display').innerText = data.username || "User";
+                document.getElementById('followers-display').innerText = data.followersCount || 0;
+            }
+        }
+
+        // ऑथेंटिकेशन स्टेट ट्रैक करना
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                currentUserUid = user.uid;
+                document.getElementById('auth-container').classList.add('hidden');
+                document.getElementById('dashboard-container').classList.remove('hidden');
+                loadUserData(user.uid);
+            } else {
+                currentUserUid = null;
+                document.getElementById('auth-container').classList.remove('hidden');
+                document.getElementById('dashboard-container').classList.add('hidden');
+            }
+        });
     </script>
 </body>
 </html>
