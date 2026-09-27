@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlienX SMM - Best Social Media Marketing Panel</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        body { background-color: #0b0f19; color: #f3f4f6; display: flex; flex-direction: column; min-height: 100vh; }
+        header { background-color: #111827; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1f2937; }
+        .logo { font-size: 22px; font-weight: bold; color: #60a5fa; text-transform: uppercase; letter-spacing: 1px; }
+        .nav-links a { color: #9ca3af; text-decoration: none; margin-left: 20px; font-size: 14px; }
+        .nav-links a:hover { color: #ffffff; }
+        .container { max-width: 900px; width: 100%; margin: 40px auto; padding: 0 20px; flex: 1; }
+        .hero { text-align: center; margin-bottom: 30px; }
+        .hero h1 { font-size: 28px; color: #ffffff; margin-bottom: 10px; }
+        .hero p { color: #9ca3af; font-size: 14px; }
+        .card { background-color: #111827; border: 1px solid #1f2937; border-radius: 12px; padding: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; font-size: 13px; color: #9ca3af; margin-bottom: 8px; font-weight: 500; }
+        select, input { width: 100%; padding: 12px; background-color: #1f2937; border: 1px solid #374151; border-radius: 8px; color: #ffffff; font-size: 14px; outline: none; }
+        select:focus, input:focus { border-color: #60a5fa; }
+        .price-box { background-color: #1f2937; padding: 15px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; font-size: 14px; }
+        .price-box span { color: #60a5fa; font-weight: bold; font-size: 18px; }
+        button { background-color: #2563eb; color: #ffffff; border: none; width: 100%; padding: 14px; border-radius: 8px; font-weight: bold; font-size: 15px; cursor: pointer; transition: background 0.2s; }
+        button:hover { background-color: #1d4ed8; }
+        #successMsg { display: none; margin-top: 15px; padding: 12px; background-color: #065f46; color: #6ee7b7; border-radius: 8px; text-align: center; font-size: 14px; }
+        footer { text-align: center; padding: 20px; color: #6b7280; font-size: 13px; border-top: 1px solid #1f2937; background-color: #111827; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">AlienX SMM</div>
+        <div class="nav-links">
+            <a href="#">Services</a>
+            <a href="#">API</a>
+            <a href="#">Support</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="hero">
+            <h1>Boost Your Social Media Instantly</h1>
+            <p>High-quality Instagram Followers, Likes & Views at the best prices.</p>
+        </div>
+
+        <div class="card">
+            <div class="form-group">
+                <label>Select Service Category</label>
+                <select id="category" onchange="updateServices()">
+                    <option value="insta">Instagram Services</option>
+                    <option value="yt">YouTube Services</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Select Specific Service</label>
+                <select id="service" onchange="calculateTotal()">
+                    <option value="120">Instagram Followers (HQ) - ₹120 per 1000</option>
+                    <option value="50">Instagram Reel Likes - ₹50 per 1000</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Target Link (Profile or Post URL)</label>
+                <input type="text" id="targetLink" placeholder="https://www.instagram.com/p/...">
+            </div>
+
+            <div class="form-group">
+                <label>Quantity</label>
+                <input type="number" id="quantity" value="1000" min="100" max="50000" oninput="calculateTotal()">
+            </div>
+
+            <div class="price-box">
+                Total Price: <span id="totalPrice">₹120.00</span>
+            </div>
+
+            <button onclick="placeOrder()">Place Order</button>
+            <div id="successMsg">Order Placed Successfully! Processing your request.</div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 AlienX SMM Panel. All rights reserved.
+    </footer>
+
+    <script>
+        function updateServices() {
+            const cat = document.getElementById('category').value;
+            const serviceSelect = document.getElementById('service');
+            serviceSelect.innerHTML = '';
+            
+            if (cat === 'insta') {
+                serviceSelect.innerHTML = `
+                    <option value="120">Instagram Followers (HQ) - ₹120 per 1000</option>
+                    <option value="50">Instagram Reel Likes - ₹50 per 1000</option>
+                `;
+            } else {
+                serviceSelect.innerHTML = `
+                    <option value="300">YouTube Subscribers - ₹300 per 1000</option>
+                    <option value="150">YouTube Video Views - ₹150 per 1000</option>
+                `;
+            }
+            calculateTotal();
+        }
+
+        function calculateTotal() {
+            const rate = parseFloat(document.getElementById('service').value);
+            const qty = parseInt(document.getElementById('quantity').value) || 0;
+            const total = (rate * qty) / 1000;
+            document.getElementById('totalPrice').textContent = '₹' + total.toFixed(2);
+        }
+
+        function placeOrder() {
+            const link = document.getElementById('targetLink').value.trim();
+            const msg = document.getElementById('successMsg');
+            
+            if (!link) {
+                alert('Please enter a valid target link.');
+                return;
+            }
+
+            msg.style.display = 'block';
+            setTimeout(() => {
+                msg.style.display = 'none';
+                document.getElementById('targetLink').value = '';
+            }, 4000);
+        }
+    </script>
+</body>
+                  </html>
+                  
