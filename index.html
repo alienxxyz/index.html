@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>𝑨𝒓𝒕𝒉𝒊𝒌 𝑷𝒐𝒓𝒕𝒂𝒍 — 𝑻𝒉𝒆 𝑬𝒙𝒄𝒍𝒖𝒔𝒊𝒗𝒆 𝑪𝒐𝒎𝒎𝒖𝒏𝒊𝒕𝒚 & 𝑽𝒂𝒖𝒍𝒕</title>
+  <title>𝑨𝒓𝒕𝒉𝒊𝒌 𝑪𝒐𝒎𝒎𝒖𝒏𝒊𝒕𝒚 — 𝑺𝒐𝒄𝒊𝒂𝒍 𝑵𝒆𝒕𝒘𝒐𝒓𝒌 & 𝑴𝒆𝒕𝒉𝒐𝒅𝒔</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- FontAwesome Icons CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+  <!-- Google Fonts: Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,400&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   
   <script>
     tailwind.config = {
@@ -19,13 +19,12 @@
       theme: {
         extend: {
           fontFamily: {
-            serif: ['"Playfair Display"', 'serif'],
             sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', '"Apple ColorEmoji"', '"Segoe UI Emoji"', 'sans-serif'],
           },
           colors: {
-            classicDark: '#0A0806',
-            classicCard: '#14100C',
-            classicBorder: '#2E241B',
+            instaDark: '#000000',
+            instaCard: '#121212',
+            instaBorder: '#262626',
             goldAccent: '#D4AF37',
             goldHover: '#B89628',
           }
@@ -36,27 +35,12 @@
   <style>
     body {
       font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Apple ColorEmoji", "Segoe UI Emoji", sans-serif;
+      background-color: #000000;
     }
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: #0A0806; }
-    ::-webkit-scrollbar-thumb { background: #2E241B; border-radius: 3px; }
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: #000000; }
+    ::-webkit-scrollbar-thumb { background: #262626; border-radius: 3px; }
     
-    @keyframes marquee {
-      0% { transform: translateX(0%); }
-      100% { transform: translateX(-50%); }
-    }
-    .animate-marquee {
-      display: flex;
-      width: 200%;
-      animation: marquee 25s linear infinite;
-    }
-    .gold-glow {
-      box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
-    }
-    .gold-border-glow:hover {
-      box-shadow: 0 0 20px rgba(212, 175, 55, 0.25);
-      border-color: #D4AF37;
-    }
     .owner-badge {
       background: linear-gradient(135deg, #D4AF37 0%, #FFD700 50%, #FFA500 100%);
       color: #000;
@@ -65,278 +49,349 @@
       padding: 2px 8px;
       border-radius: 4px;
       letter-spacing: 0.8px;
-      box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+      box-shadow: 0 0 12px rgba(212, 175, 55, 0.5);
       display: inline-block;
       vertical-align: middle;
       text-transform: uppercase;
     }
-    .aura-card {
-      border: 1.5px solid #D4AF37;
-      box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
+    .aura-border {
+      border: 1px solid #D4AF37;
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+    }
+    .story-ring {
+      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      padding: 2px;
+      border-radius: 50%;
+    }
+    .owner-story-ring {
+      background: linear-gradient(45deg, #D4AF37 0%, #FFD700 50%, #FFA500 100%);
+      padding: 2px;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
     }
   </style>
 </head>
-<body class="bg-classicDark text-stone-200 antialiased selection:bg-goldAccent selection:text-black">
+<body class="text-stone-200 antialiased selection:bg-goldAccent selection:text-black">
 
-  <!-- Classic Announcement Bar -->
-  <div class="bg-gradient-to-r from-amber-950 via-amber-900 to-stone-950 text-goldAccent text-[11px] font-semibold tracking-widest uppercase py-2.5 border-b border-goldAccent/20">
-    <div class="animate-marquee whitespace-nowrap flex gap-12 items-center">
-      <span>⚜️ 𝑾𝑬𝑳𝑪𝑶𝑴𝑬 𝑻𝑶 𝑻𝑯𝑬 𝑬𝑿𝑪𝑳𝑼𝑺𝑰𝑽𝑬 𝑨𝑹𝑻𝑯𝑰𝑲 𝑷𝑶𝑹𝑻𝑨𝑳 𝑪𝑶𝑴𝑴𝑼𝑵𝑰𝑻𝒀</span>
-      <span>💬 𝑳𝑰𝑽𝑬 𝑪𝑶𝑴𝑴𝑼𝑵𝑰𝑻𝒀 𝑪𝑯𝑨𝑻𝑹𝑶𝑶𝑴 𝑵𝑶𝑾 𝑨𝑪𝑻𝑰𝑽𝑬 𝑭𝑶𝑹 𝑴𝑬𝑴𝑩𝑬𝑹𝑺</span>
-      <span>🏛️ 𝑫𝑰𝑹𝑬𝑪𝑻 𝑽𝑰𝑷 𝑨𝑪𝑪𝑬𝑺𝑺 𝑽𝑰𝑨 𝑼𝑷𝑰 & 𝑪𝑹𝒀𝑷𝑻𝑶</span>
-    </div>
-  </div>
-
-  <!-- Navbar -->
-  <nav class="sticky top-0 z-40 bg-classicDark/90 backdrop-blur-md border-b border-classicBorder px-4 py-4">
-    <div class="max-w-6xl mx-auto flex items-center justify-between">
-      <a href="#" class="flex items-center gap-3">
-        <div class="w-8 h-8 rounded-full bg-goldAccent/10 border border-goldAccent/40 flex items-center justify-center text-goldAccent font-serif font-bold text-sm">
-          𝑨𝑷
-        </div>
-        <span class="font-serif text-2xl font-bold tracking-wide text-stone-100">
-          𝑨𝒓𝒕𝒉𝒊𝒌 <span class="text-goldAccent font-normal italic">𝑷𝒐𝒓𝒕𝒂𝒍</span>
+  <!-- Top Navigation Header -->
+  <nav class="sticky top-0 z-50 bg-black/90 backdrop-blur-md border-b border-instaBorder px-4 py-3">
+    <div class="max-w-5xl mx-auto flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2">
+        <span class="font-serif text-2xl font-extrabold tracking-wide text-white">
+          𝑨𝒓𝒕𝒉𝒊𝒌 <span class="text-goldAccent italic font-normal">𝑪𝒐ｍｍ𝒖𝒏𝒊𝒕𝒚</span>
         </span>
       </a>
-      <div class="hidden md:flex items-center gap-8 text-xs font-semibold tracking-wider text-stone-400 uppercase">
-        <a href="#catalog" class="hover:text-goldAccent transition">𝑻𝒉𝒆 𝑽𝒂𝒖𝒍𝒕</a>
-        <a href="#community" class="hover:text-goldAccent transition">𝑪𝒐𝒎𝒎𝒖𝒏𝒊𝒕𝒚 𝑪𝒉𝒂𝒕</a>
-        <a href="#process" class="hover:text-goldAccent transition">𝑴𝒆𝒎𝒃𝒆𝒓𝒔𝒉𝒊𝒑</a>
-        <a href="#faq" class="hover:text-goldAccent transition">𝑰𝒏𝒒𝒖𝒊𝒓𝒊𝒆𝒔</a>
-      </div>
+
+      <!-- Action Buttons -->
       <div class="flex items-center gap-3">
-        <button id="navAuthBtn" onclick="openAuthModal()" class="px-4 py-2 text-xs font-semibold tracking-wider uppercase bg-classicCard border border-goldAccent/40 text-goldAccent rounded-sm hover:bg-goldAccent hover:text-black transition">
-          <i class="fa-solid fa-user-plus mr-1"></i> 𝑺𝒊𝒈𝒏 𝑼𝒑 / 𝑳𝒐𝒈𝒊𝒏
+        <button onclick="openUploadModal()" class="px-3.5 py-1.5 text-xs font-bold bg-stone-900 border border-goldAccent/40 text-goldAccent hover:bg-goldAccent hover:text-black rounded-lg transition flex items-center gap-2">
+          <i class="fa-solid fa-plus"></i> 𝑼𝒑𝒍𝒐𝒂𝒅 𝑵𝒆𝒘 𝑴𝒆𝒕𝒉𝒐𝒅𝒔
         </button>
-        <button onclick="openCheckout('Private Vault Pass', '₹499')" class="hidden sm:flex px-4 py-2 text-xs font-semibold tracking-wider uppercase bg-goldAccent hover:bg-goldHover text-black rounded-sm transition shadow-lg shadow-goldAccent/10 items-center gap-2">
-          <i class="fa-solid fa-key text-xs"></i> 𝑽𝒂𝒖𝒍𝒕
+        <button id="navAuthBtn" onclick="openAuthModal()" class="px-4 py-1.5 text-xs font-semibold bg-goldAccent hover:bg-goldHover text-black rounded-lg transition">
+          𝑺𝒊𝒈𝒏 𝑼𝒑 / 𝑳𝒐𝒈𝒊𝒏
         </button>
       </div>
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="relative px-4 py-20 md:py-28 max-w-4xl mx-auto text-center">
-    <div class="absolute inset-0 -z-10 flex items-center justify-center">
-      <div class="w-96 h-96 bg-goldAccent/5 rounded-full blur-3xl"></div>
-    </div>
+  <!-- Main Layout Container -->
+  <main class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-4 py-6">
     
-    <div class="inline-flex items-center gap-2 px-4 py-1.5 text-xs font-serif italic text-goldAccent bg-goldAccent/10 border border-goldAccent/30 rounded-full mb-6">
-      <i class="fa-solid fa-crown text-[10px]"></i> 𝑨𝒏 𝑬𝒙𝒄𝒍𝒖𝒔𝒊𝒗𝒆 𝑰𝒏𝒏𝒆𝒓 𝑪𝒊𝒓𝒄𝒍𝒆 & 𝑪𝒐𝒎𝒎𝒖𝒏𝒊𝒕𝒚 🚀
-    </div>
-    
-    <h1 class="font-serif text-4xl md:text-7xl font-extrabold text-stone-100 tracking-tight leading-tight mb-6">
-      𝑺𝒕𝒆𝒑 𝑰𝒏𝒕𝒐 𝑨 𝑯𝒊𝒈𝒉𝒆𝒓 <br/><span class="text-goldAccent italic font-normal">𝑭𝒊𝒏𝒂𝒏𝒄𝒊𝒂𝒍 𝑹𝒆𝒂𝒍𝒎 🔥</span>
-    </h1>
-    
-    <p class="text-stone-400 text-base md:text-lg font-light max-w-2xl mx-auto mb-10 leading-relaxed">
-      Connect with fellow members in our private community chat, discuss financial strategies, and unlock elite digital archives. 💎
-    </p>
-
-    <div class="flex flex-wrap items-center justify-center gap-5">
-      <a href="#community" class="px-8 py-3.5 bg-goldAccent text-black font-semibold uppercase tracking-wider text-xs rounded-sm hover:bg-goldHover transition shadow-xl shadow-goldAccent/10">
-        𝑱𝒐𝒊𝒏 𝑪𝒐𝒎𝒎𝒖𝒏𝒊𝒕𝒚 𝑪𝒉𝒂𝒕 💬
-      </a>
-      <a href="#catalog" class="px-8 py-3.5 bg-classicCard border border-classicBorder text-stone-300 font-semibold uppercase tracking-wider text-xs rounded-sm hover:border-goldAccent/40 transition">
-        𝑬𝑿𝑷𝑳𝑶𝑹𝑬 𝑨𝑹𝑪𝑯𝑰𝑽𝑬𝑺 📂
-      </a>
-    </div>
-  </section>
-
-  <!-- COMMUNITY CHATROOM SECTION -->
-  <section id="community" class="max-w-5xl mx-auto px-4 py-16">
-    <div class="text-center mb-10">
-      <h2 class="font-serif text-3xl md:text-4xl font-bold text-stone-100 mb-2">𝑴𝒆𝒎𝒃𝒆𝒓𝒔 𝑫𝒊𝒔𝒄𝒖𝒔𝒔𝒊𝒐𝒏 𝑳𝒐𝒖𝒏𝒈𝒆 💬</h2>
-      <p class="text-xs font-mono uppercase tracking-widest text-goldAccent">𝑹𝒆𝒂𝒍-𝒕𝒊𝒎𝒆 𝒑𝒖𝒃𝒍𝒊𝒄 𝒈𝒓𝒐𝒖𝒑 𝒄𝒉𝒂𝒕 𝒇𝒐𝒓 𝒗𝒆𝒓𝒊𝒇𝒊𝒆𝒅 𝒎𝒆𝒎𝒃𝒆𝒓𝒔 ✨</p>
-    </div>
-
-    <div class="bg-classicCard border border-classicBorder rounded-sm grid grid-cols-1 md:grid-cols-4 overflow-hidden gold-glow">
+    <!-- Left Feed Section -->
+    <div class="md:col-span-2 space-y-6">
       
-      <!-- Members Sidebar -->
-      <div class="bg-black/50 border-r border-classicBorder p-4 hidden md:block">
-        <h3 class="text-xs uppercase font-mono tracking-widest text-goldAccent mb-4 flex items-center gap-2">
-          <i class="fa-solid fa-users"></i> 𝑶𝒏𝒍𝒊𝒏𝒆 𝑴𝒆𝒎𝒃𝒆𝒓𝒔 🟢
-        </h3>
-        <div id="membersList" class="space-y-3 text-xs text-stone-300">
-          <div class="flex items-center justify-between">
-            <span class="flex items-center gap-2">
-              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-              <span>ArthikAdmin</span>
-            </span>
-            <span class="owner-badge">𝐎ᴡɴᴇʀ 🔌</span>
-          </div>
+      <!-- Welcome Banner -->
+      <div class="bg-instaCard border border-instaBorder rounded-xl p-6 text-center aura-border">
+        <div class="inline-flex items-center gap-2 px-3 py-1 text-xs text-goldAccent bg-goldAccent/10 border border-goldAccent/30 rounded-full mb-3">
+          <i class="fa-solid fa-crown text-[10px]"></i> Official Network
         </div>
-        <div class="mt-8 pt-4 border-t border-classicBorder text-[11px] text-stone-500">
-          <p>Sign up with your name to join the active directory.</p>
+        <h1 class="text-2xl md:text-3xl font-extrabold text-white mb-2">
+          𝑾𝒆𝒍𝒄𝒐𝒎𝒆 𝒕𝒐 𝑨𝒓𝒕𝒉𝒊𝒌 𝑪𝒐𝒎𝒎𝒖𝒏𝒊𝒕𝒚 ✨
+        </h1>
+        <p class="text-xs text-stone-400 max-w-md mx-auto">
+          Connect with exclusive members, share financial methods, and chat live in our community group. 🚀
+        </p>
+      </div>
+
+      <!-- Twitter/X Style Quick Upload Prompt Box -->
+      <div class="bg-instaCard border border-instaBorder rounded-xl p-4">
+        <div class="flex gap-3 items-start">
+          <div class="w-10 h-10 rounded-full bg-goldAccent/20 border border-goldAccent/40 flex items-center justify-center text-goldAccent font-bold flex-shrink-0">
+            ✍️
+          </div>
+          <div class="w-full">
+            <textarea id="quickMethodInput" onclick="openUploadModal()" placeholder="What new method or strategy do you want to share today?..." class="w-full bg-black border border-instaBorder rounded-xl p-3 text-xs text-white focus:outline-none resize-none h-16 cursor-pointer" readonly></textarea>
+            <div class="flex justify-between items-center mt-2">
+              <span class="text-[10px] text-stone-500">Share financial tips instantly</span>
+              <button onclick="openUploadModal()" class="px-4 py-1.5 bg-goldAccent hover:bg-goldHover text-black text-xs font-bold rounded-lg transition">
+                𝑷𝒐𝒔𝒕 𝑴𝒆𝒕𝒉𝒐𝒅 🚀
+              </button>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- Chat Box Area -->
-      <div class="md:col-span-3 flex flex-col h-[450px]">
-        <!-- Chat Header -->
-        <div class="px-4 py-3 bg-black/60 border-b border-classicBorder flex justify-between items-center text-xs">
-          <span class="font-serif text-stone-200 font-bold tracking-wide flex items-center gap-2">
-            <i class="fa-solid fa-comments text-goldAccent"></i> #𝒈𝒆𝒏𝒆𝒓𝒂𝒍-𝒅𝒊𝒔𝒄𝒖𝒔𝒔𝒊𝒐𝒏
-          </span>
-          <span id="currentUserStatus" class="text-stone-400 font-mono text-[10px]">𝑕𝒖𝒆𝒔𝒕 𝑴𝒐𝒅𝒆 👤</span>
+      <!-- Feed Container (Dynamic Uploads & Posts) -->
+      <div id="feedContainer" class="space-y-6">
+        <!-- Default Post -->
+        <article class="bg-instaCard border border-instaBorder rounded-xl overflow-hidden">
+          <div class="p-3.5 flex items-center justify-between border-b border-instaBorder">
+            <div class="flex items-center gap-3">
+              <div class="owner-story-ring w-9 h-9 flex items-center justify-center bg-black">
+                <div class="w-8 h-8 rounded-full bg-goldAccent/20 flex items-center justify-center text-goldAccent text-xs font-bold">👑</div>
+              </div>
+              <div>
+                <span class="text-xs font-bold text-white flex items-center gap-2">
+                  ArthikAdmin <span class="owner-badge">𝐎ᴡɴᴇʀ 🔌</span>
+                </span>
+                <span class="text-[10px] text-stone-500 block">Kanpur, India • Official Feed</span>
+              </div>
+            </div>
+          </div>
+          <div class="p-5 text-sm text-stone-200 bg-black/50 border-b border-instaBorder">
+            <p class="font-serif text-base text-goldAccent font-bold mb-2">"𝑾𝒆𝒍𝒄𝒐𝒎𝒆 𝒕𝒐 𝑨𝒓𝒕𝒉𝒊𝒌 𝑪𝒐𝒎𝒎𝒖𝒏𝒊𝒕𝒚"</p>
+            <p class="text-xs text-stone-300">Use the <b>"Upload New Methods"</b> button above to publish your methods directly to this community feed. Sign up with your Gmail and phone number to unlock full access!</p>
+          </div>
+        </article>
+      </div>
+
+      <!-- COMMUNITY GROUP CHAT SECTION -->
+      <section id="community" class="bg-instaCard border border-instaBorder rounded-xl overflow-hidden aura-border">
+        <div class="p-4 bg-black border-b border-instaBorder flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <i class="fa-solid fa-comments text-goldAccent text-lg"></i>
+            <div>
+              <h3 class="text-sm font-bold text-white">𝑨𝒓𝒕𝒉𝒊𝒌 𝑪𝒐𝒎𝒎𝒖𝒏𝒊𝒕𝒚 𝑮𝒓𝒐𝒖𝒑 𝑪𝒉𝒂𝒕 💬</h3>
+              <p id="groupStatus" class="text-[10px] text-stone-400">Sign up required to chat</p>
+            </div>
+          </div>
+          <span class="text-[10px] bg-emerald-950 text-emerald-400 border border-emerald-800 px-2 py-0.5 rounded-full font-mono">● LIVE</span>
         </div>
 
-        <!-- Messages Container -->
-        <div id="chatMessages" class="flex-1 p-4 overflow-y-auto space-y-3 text-xs">
-          <div class="bg-classicDark border border-classicBorder p-3 rounded-sm aura-card">
+        <!-- Messages Box -->
+        <div id="chatMessages" class="p-4 h-80 overflow-y-auto space-y-3 text-xs bg-black/40">
+          <div class="bg-instaCard border border-instaBorder p-3 rounded-lg">
             <div class="flex items-center justify-between mb-1">
-              <span class="text-goldAccent font-semibold flex items-center gap-2">ArthikAdmin <span class="owner-badge">𝐎ᴡɴᴇʀ 🔌</span></span>
+              <span class="text-goldAccent font-bold flex items-center gap-2">ArthikAdmin <span class="owner-badge">𝐎ᴡɴᴇʀ 🔌</span></span>
               <span class="text-[9px] text-stone-500 font-mono">12:00 PM</span>
             </div>
-            <p class="text-stone-300 font-light">𝑾𝒆𝒍𝒄𝒐𝒎𝒆 𝒕𝒐 𝑨𝒓𝒕𝒉𝒊𝒌 𝑷𝒐𝒓𝒕𝒂𝒍 𝒄𝒐𝒎𝒎𝒖𝒏𝒊𝒕𝒚! 🎉 𝑭𝒆𝒆𝒍 𝒇𝒓𝒆𝒆 𝒕𝒐 𝒅𝒊𝒔𝒄𝒖𝒔𝒔 𝒇𝒊𝒏𝒂𝒏𝒄𝒊𝒂𝒍 𝒈𝒓𝑶𝒘𝒕𝒉 𝒉𝒆𝒓𝒆. 📈</p>
+            <p class="text-stone-300">𝑾𝒆𝒍𝒄𝒐𝒎𝒆 𝒕𝒐 𝑨𝒓𝒕𝒉𝒊𝒌 𝑪𝒐𝒎𝒎𝒖𝒏𝒊𝒕𝒚! 𝑺𝒊𝒈𝒏 𝒖𝒑 𝒘𝒊𝒕𝒉 𝑮𝒎𝒂𝒊𝒍 & 𝒑𝒉𝒐𝒏𝒆 𝒕𝒐 𝒋𝒐𝒊𝒏 𝒄𝒉𝒂𝒕. 🎉</p>
           </div>
         </div>
 
         <!-- Chat Input Form -->
-        <form onsubmit="sendChatMessage(event)" class="p-3 bg-black/60 border-t border-classicBorder flex gap-2">
-          <input type="text" id="chatInput" placeholder="Type your message with emojis 😊..." class="flex-1 bg-classicDark border border-classicBorder rounded-sm px-3 py-2 text-xs text-stone-100 focus:outline-none focus:border-goldAccent" />
-          <button type="submit" class="bg-goldAccent hover:bg-goldHover text-black px-4 py-2 text-xs uppercase font-semibold transition">
+        <form onsubmit="sendChatMessage(event)" class="p-3 bg-black border-t border-instaBorder flex gap-2">
+          <input type="text" id="chatInput" placeholder="Message group with emojis 😊..." class="flex-1 bg-instaCard border border-instaBorder rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-goldAccent" />
+          <button type="submit" class="bg-goldAccent hover:bg-goldHover text-black px-4 py-2 text-xs font-bold rounded-lg transition">
             𝑺𝒆𝒏𝒅 🚀
           </button>
         </form>
-      </div>
+      </section>
 
     </div>
-  </section>
 
-  <!-- Product Catalog (The Vault) -->
-  <section id="catalog" class="max-w-6xl mx-auto px-4 py-12">
-    <div class="text-center mb-12">
-      <h2 class="font-serif text-3xl md:text-4xl font-bold text-stone-100 mb-2">𝑻𝒉𝒆 𝑷𝒓𝒊𝒗𝒂𝒕𝒆 𝑨𝒓𝒄𝒉𝒊𝒗𝒆𝒔 🏛️</h2>
-      <p class="text-xs font-mono uppercase tracking-widest text-goldAccent">𝑯𝒂𝒏𝒅𝒑𝒊𝒄𝒌𝒆𝒅 𝑲𝒏𝒐𝒘𝒍𝒆𝒅𝒈𝒆 & 𝑫𝒊𝒈𝒊𝒕𝒂𝒍 𝑾𝒆𝒂𝒍𝒕𝒉 𝑲𝒊𝒕𝒔 💎</p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      
-      <!-- Card 1 -->
-      <div class="bg-classicCard border border-classicBorder rounded-sm p-6 gold-border-glow transition duration-300 flex flex-col justify-between">
-        <div>
-          <div class="flex justify-between items-start mb-4">
-            <span class="text-[10px] font-semibold uppercase tracking-widest text-goldAccent bg-goldAccent/10 border border-goldAccent/30 px-2.5 py-1 rounded-xs">𝑷𝑹𝑰𝑽𝑨𝑻𝑬 𝑬𝑫𝑰𝑻𝑰𝑶𝑵 🔒</span>
-            <span class="text-xs font-serif italic text-stone-600">𝑽𝒐𝒍. 𝑰</span>
-          </div>
-          <h3 class="font-serif text-xl font-bold text-stone-100 mb-3">𝑷𝒆𝒓𝒔𝒐𝒏𝒂𝒍 𝑾𝒆𝒂𝒍𝒕𝒉 𝑩𝒍𝒖𝒆𝒑𝒓𝒊𝒏𝒕 💰</h3>
-          <p class="text-xs text-stone-400 font-light leading-relaxed mb-6">Complete strategic guide on capital allocation, wealth preservation, and modern investment principles.</p>
-        </div>
-        <div class="flex items-center justify-between border-t border-classicBorder pt-5">
+    <!-- Right Sidebar Section -->
+    <div class="hidden md:block space-y-6">
+      <div id="userProfileSide" class="bg-instaCard border border-instaBorder p-4 rounded-xl flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-stone-800 border border-instaBorder flex items-center justify-center text-stone-400 font-bold">👤</div>
           <div>
-            <span class="text-[10px] uppercase tracking-widest text-stone-500 block">𝑨𝒄𝒄𝒆𝒔𝒔 𝑭𝒆𝒆</span>
-            <span class="font-serif text-xl font-bold text-goldAccent">₹299</span>
+            <span class="text-xs font-bold text-white block">Guest User</span>
+            <span class="text-[10px] text-stone-500">Not Signed In</span>
           </div>
-          <button onclick="openCheckout('Personal Wealth Blueprint', '₹299')" class="px-5 py-2.5 bg-stone-900 border border-goldAccent/40 hover:bg-goldAccent hover:text-black text-goldAccent text-xs uppercase font-semibold tracking-wider transition">
-            𝑼𝒏𝒍𝒐𝒄𝒌 𝑬𝒏𝒕𝒓𝒚 ⚡
-          </button>
         </div>
+        <button onclick="openAuthModal()" class="text-xs text-goldAccent font-bold hover:underline">Join</button>
       </div>
 
-      <!-- Card 2 -->
-      <div class="bg-classicCard border border-classicBorder rounded-sm p-6 gold-border-glow transition duration-300 flex flex-col justify-between">
-        <div>
-          <div class="flex justify-between items-start mb-4">
-            <span class="text-[10px] font-semibold uppercase tracking-widest text-amber-400 bg-amber-950/40 border border-amber-800/40 px-2.5 py-1 rounded-xs">𝑴𝑶𝑺𝑻 𝑪𝑶𝑽𝑬𝑻𝑬𝑫 🔥</span>
-            <span class="text-xs font-serif italic text-stone-600">𝑽𝒐𝒍. 𝑰𝑰</span>
-          </div>
-          <h3 class="font-serif text-xl font-bold text-stone-100 mb-3">𝑫𝒊𝒈𝒊𝒕𝒂𝒍 𝑰𝒏𝒄𝒐𝒎𝒆 𝑺𝒚𝒔𝒕𝒆𝒎𝒔 📈</h3>
-          <p class="text-xs text-stone-400 font-light leading-relaxed mb-6">Secrets of building passive income pipelines through high-ticket freelancing and digital ventures.</p>
+      <div class="bg-instaCard border border-instaBorder p-4 rounded-xl space-y-4">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-stone-400">Community Directory</span>
+          <span class="text-[10px] text-goldAccent font-mono">Active</span>
         </div>
-        <div class="flex items-center justify-between border-t border-classicBorder pt-5">
-          <div>
-            <span class="text-[10px] uppercase tracking-widest text-stone-500 block">𝑨𝒄𝒄𝒆𝒔𝒔 𝑭𝒆𝒆</span>
-            <span class="font-serif text-xl font-bold text-goldAccent">₹499</span>
+        <div id="sidebarMembers" class="space-y-3">
+          <div class="flex items-center justify-between text-xs">
+            <div class="flex items-center gap-2">
+              <div class="owner-story-ring w-7 h-7 flex items-center justify-center bg-black">
+                <div class="w-6 h-6 rounded-full bg-goldAccent/20 flex items-center justify-center text-[10px]">👑</div>
+              </div>
+              <span class="font-bold text-white">ArthikAdmin</span>
+            </div>
+            <span class="owner-badge">𝐎ᴡɴᴇʀ 🔌</span>
           </div>
-          <button onclick="openCheckout('Digital Income Systems', '₹499')" class="px-5 py-2.5 bg-stone-900 border border-goldAccent/40 hover:bg-goldAccent hover:text-black text-goldAccent text-xs uppercase font-semibold tracking-wider transition">
-            𝑼𝒏𝒍𝒐𝒄𝒌 𝑬𝒏𝒕𝒓𝒚 ⚡
-          </button>
         </div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="bg-classicCard border border-classicBorder rounded-sm p-6 gold-border-glow transition duration-300 flex flex-col justify-between">
-        <div>
-          <div class="flex justify-between items-start mb-4">
-            <span class="text-[10px] font-semibold uppercase tracking-widest text-stone-300 bg-stone-800/40 border border-stone-600/40 px-2.5 py-1 rounded-xs">𝑭𝑼𝑳𝑳 𝑽𝑨𝑼𝑳𝑻 🌟</span>
-            <span class="text-xs font-serif italic text-stone-600">𝑽𝒐𝒍. 𝑰𝑰𝑰</span>
-          </div>
-          <h3 class="font-serif text-xl font-bold text-stone-100 mb-3">𝑴𝒂𝒔𝒕𝒆𝒓 𝑾𝒆𝒂𝒍𝒕𝒉 𝑺𝒚𝒏𝒅𝒊𝒄𝒂𝒕𝒆 💼</h3>
-          <p class="text-xs text-stone-400 font-light leading-relaxed mb-6">The ultimate suite featuring accounting models, scaling templates, and growth media assets.</p>
-        </div>
-        <div class="flex items-center justify-between border-t border-classicBorder pt-5">
-          <div>
-            <span class="text-[10px] uppercase tracking-widest text-stone-500 block">𝑨𝒄𝒄𝒆𝒔𝒔 𝑭𝒆𝒆</span>
-            <span class="font-serif text-xl font-bold text-goldAccent">₹799</span>
-          </div>
-          <button onclick="openCheckout('Master Wealth Syndicate', '₹799')" class="px-5 py-2.5 bg-stone-900 border border-goldAccent/40 hover:bg-goldAccent hover:text-black text-goldAccent text-xs uppercase font-semibold tracking-wider transition">
-            𝑼𝒏𝒍𝒐𝒄𝒌 𝑬𝒏𝒕𝒓𝒚 ⚡
-          </button>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="border-t border-classicBorder bg-black py-12 px-4 text-center text-xs">
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 mb-8">
-      <div class="text-left">
-        <span class="font-serif text-xl font-bold text-stone-100 block mb-1">𝑨𝒓𝒕𝒉𝒊𝒌 <span class="text-goldAccent font-normal italic">𝑷𝒐𝒓𝒕𝒂𝒍</span></span>
-        <p class="text-stone-500 font-light">𝑨𝒏 𝑬𝒙𝒄𝒍𝒖𝒔𝒊𝒗𝒆 𝑵𝒆𝒕𝒘𝒐𝒓𝒌 𝒇𝒐𝒓 𝑭𝒊𝒏𝒂𝒏𝒄𝒊𝒂𝒍 𝑨𝒅𝒗𝒂𝒏𝒄𝒆𝒎𝒆𝒏𝒕 🛡️</p>
-      </div>
-      <div class="flex flex-wrap items-center justify-center gap-8 text-stone-400">
-        <a href="mailto:arthikportals@gmail.com" class="hover:text-goldAccent flex items-center gap-2 transition">
-          <i class="fa-solid fa-envelope text-goldAccent"></i> arthikportals@gmail.com
-        </a>
-        <a href="tel:+919795805641" class="hover:text-goldAccent flex items-center gap-2 transition">
-          <i class="fa-solid fa-phone text-goldAccent"></i> +91 97958 05641
-        </a>
-        <a href="https://instagram.com/arthikportal.enx" target="_blank" class="hover:text-goldAccent flex items-center gap-2 transition">
-          <i class="fa-brands fa-instagram text-goldAccent"></i> @arthikportal.enx
-        </a>
       </div>
     </div>
-    <p class="text-stone-600 font-mono text-[10px]">© 2026 𝑨𝒓𝒕𝒉𝒊𝒌 𝑷𝒐𝒓𝒕𝒂𝒍. 𝑨𝒍𝒍 𝑹𝒊𝒈𝒉𝒕𝒔 𝑹𝒆𝒔𝒆𝒓𝒗𝒆𝒅. 🌐</p>
-  </footer>
+  </main>
 
-  <!-- SIGN UP / LOGIN MODAL -->
-  <div id="authModal" class="fixed inset-0 bg-black/90 backdrop-blur-md z-50 hidden items-center justify-center p-4">
-    <div class="bg-classicCard border border-goldAccent/30 rounded-sm max-w-md w-full p-6 relative gold-glow">
-      <button onclick="closeAuthModal()" class="absolute top-4 right-4 text-stone-500 hover:text-goldAccent text-lg transition">
+  <!-- TWITTER/X STYLE "UPLOAD NEW METHODS" MODAL -->
+  <div id="uploadModal" class="fixed inset-0 bg-black/90 backdrop-blur-md z-50 hidden items-center justify-center p-4">
+    <div class="bg-instaCard border border-goldAccent/40 rounded-xl max-w-lg w-full p-5 relative aura-border">
+      <button onclick="closeUploadModal()" class="absolute top-4 right-4 text-stone-500 hover:text-white text-lg">
         <i class="fa-solid fa-xmark"></i>
       </button>
-      <h3 class="font-serif text-2xl font-bold text-stone-100 mb-1">𝑴𝒆𝒎𝒃𝒆𝒓 𝑺𝒊𝒈𝒏 𝑼𝒑 📝</h3>
-      <p class="text-xs text-goldAccent font-mono mb-6 uppercase tracking-wider">𝑱𝒐𝒊𝒏 𝑪𝒐𝒎𝒎𝒖𝒏𝒊𝒕𝒚 & 𝑼𝒏𝒍𝒐𝒄𝒌 𝑪𝒉𝒂𝒕</p>
+      <h3 class="text-sm font-bold text-white mb-3 flex items-center gap-2">
+        <i class="fa-solid fa-feather text-goldAccent"></i> Upload New Method / Strategy
+      </h3>
+
+      <form onsubmit="handleMethodUpload(event)" class="space-y-3">
+        <textarea id="methodTitleInput" required placeholder="Title of your method (e.g. Advanced Capital Growth Strategy)..." class="w-full bg-black border border-instaBorder rounded-lg p-3 text-xs text-white focus:outline-none focus:border-goldAccent h-12 resize-none"></textarea>
+        <textarea id="methodContentInput" required placeholder="Write your method details here, add steps, or share valuable insights..." class="w-full bg-black border border-instaBorder rounded-lg p-3 text-xs text-white focus:outline-none focus:border-goldAccent h-28 resize-none"></textarea>
+        <div class="flex justify-between items-center pt-2">
+          <span class="text-[10px] text-stone-500">Publicly visible to all members</span>
+          <button type="submit" class="px-5 py-2 bg-goldAccent hover:bg-goldHover text-black text-xs font-bold rounded-lg transition">
+            𝑷𝒖𝒃𝒍𝒊𝒔𝒉 𝑴𝒆𝒕𝒉𝒐𝒅 ⚡
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- SIGN UP / LOGIN MODAL (Gmail & Phone Number) -->
+  <div id="authModal" class="fixed inset-0 bg-black/90 backdrop-blur-md z-50 hidden items-center justify-center p-4">
+    <div class="bg-instaCard border border-goldAccent/40 rounded-xl max-w-md w-full p-6 relative aura-border">
+      <button onclick="closeAuthModal()" class="absolute top-4 right-4 text-stone-500 hover:text-white text-lg">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <h3 class="text-xl font-bold text-white mb-1">𝑴𝒆𝒎𝒃𝒆𝒓 𝑺𝒊𝒈𝒏 𝑼𝒑 📝</h3>
+      <p class="text-xs text-goldAccent mb-6">Enter your Gmail & Phone Number to unlock community chat & posting.</p>
 
       <form onsubmit="handleUserSignUp(event)" class="space-y-4">
         <div>
-          <label class="block text-[10px] uppercase tracking-widest text-stone-400 mb-1">𝒀𝒐𝒖𝒓 𝑫𝒊𝒔𝒑𝒍𝒂𝒚 𝑵𝒂𝒎𝒆</label>
-          <input type="text" id="signupName" required placeholder="e.g. ArthikAdmin" class="w-full bg-classicDark border border-classicBorder rounded-sm px-3.5 py-2.5 text-xs text-stone-100 focus:outline-none focus:border-goldAccent" />
+          <label class="block text-[10px] uppercase tracking-widest text-stone-400 mb-1">Display Name</label>
+          <input type="text" id="signupName" required placeholder="e.g. ArthikAdmin" class="w-full bg-black border border-instaBorder rounded-lg px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-goldAccent" />
         </div>
         <div>
-          <label class="block text-[10px] uppercase tracking-widest text-stone-400 mb-1">𝒀𝒐𝒖𝒓 𝑮𝒎𝒂𝒊𝒍</label>
-          <input type="email" id="signupEmail" required placeholder="arthikportals@gmail.com" class="w-full bg-classicDark border border-classicBorder rounded-sm px-3.5 py-2.5 text-xs text-stone-100 focus:outline-none focus:border-goldAccent" />
+          <label class="block text-[10px] uppercase tracking-widest text-stone-400 mb-1">Gmail Address</label>
+          <input type="email" id="signupEmail" required placeholder="arthikportals@gmail.com" class="w-full bg-black border border-instaBorder rounded-lg px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-goldAccent" />
         </div>
         <div>
-          <label class="block text-[10px] uppercase tracking-widest text-stone-400 mb-1">𝑷𝒉𝒐𝒏𝒆 𝑵𝒖𝒎𝒃𝒆𝒓</label>
-          <input type="tel" id="signupPhone" required placeholder="+91 97958..." class="w-full bg-classicDark border border-classicBorder rounded-sm px-3.5 py-2.5 text-xs text-stone-100 focus:outline-none focus:border-goldAccent" />
+          <label class="block text-[10px] uppercase tracking-widest text-stone-400 mb-1">Phone Number</label>
+          <input type="tel" id="signupPhone" required placeholder="+91 97958..." class="w-full bg-black border border-instaBorder rounded-lg px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-goldAccent" />
         </div>
-        <button type="submit" class="w-full bg-goldAccent hover:bg-goldHover text-black font-semibold py-3 text-xs uppercase tracking-widest transition">
-          𝑪𝒐𝒎𝒑𝒍𝒆𝒕𝒆 𝑺𝒊𝒈𝒏 𝑼𝒑 ✨
+        <button type="submit" class="w-full bg-goldAccent hover:bg-goldHover text-black font-bold py-3 text-xs uppercase tracking-widest rounded-lg transition">
+          𝑺𝒊𝒈𝒏 𝑼𝒑 & 𝑱𝒐𝒊𝒏 𝑪𝒉𝒂𝒕 ⚡
         </button>
       </form>
     </div>
   </div>
 
-  <!-- CHECKOUT MODAL -->
-  <div id="checkoutModal" class="fixed inset-0 bg-black/90 backdrop-blur-md z-50 hidden items-center justify-center p-4">
-    <div class="bg-classicCard border border-goldAccent/30 rounded-sm max-w-md w-full p-6 relative gold-glow">
-      <button onclick="closeCheckout()" class="absolute top-4 right-4 text-stone-500 hover:text-goldAccent text-lg transition">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-      <h3 class="font-serif text-2xl font-bold text-stone-100 mb-1">𝑽𝒂𝒖𝒍𝒕 𝑨𝒄𝒄𝒆𝒔𝒔 𝑬𝒏𝒕𝒓𝒚 🔐</h3>
-      <p id="modalProductName" class="text-xs text-goldAccent font-mono mb-6 uppercase tracking-wider">𝑨𝒓𝒄𝒉𝒊𝒗𝒆 𝑺𝒆𝒍𝒆𝒄𝒕𝒊𝒐𝒏</p>
+  <!-- Interactive JavaScript -->
+  <script>
+    let loggedInUser = localStorage.getItem('arthik_user') ? JSON.parse(localStorage.getItem('arthik_user')) : null;
 
-      <div class="bg-classicDark border border-classicBorder p-5 rounded-sm text-center 
+    window.onload = function() {
+      updateAuthUI();
+      loadUserMethods();
+    };
+
+    function updateAuthUI() {
+      const authBtn = document.getElementById('navAuthBtn');
+      const statusText = document.getElementById('groupStatus');
+      const userSide = document.getElementById('userProfileSide');
+
+      if (loggedInUser) {
+        const isOwner = loggedInUser.name.toLowerCase() === 'arthikadmin' || loggedInUser.phone === '+919795805641';
+        const badgeHTML = isOwner ? ' <span class="owner-badge">𝐎ᴡɴᴇʀ 🔌</span>' : '';
+        
+        authBtn.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-400 mr-1"></i> ${toStylishFont(loggedInUser.name)}`;
+        authBtn.onclick = null;
+        if(statusText) statusText.innerText = `Joined group as: ${loggedInUser.name}`;
+
+        if(userSide) {
+          userSide.innerHTML = `
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-goldAccent/20 border border-goldAccent/40 flex items-center justify-center text-goldAccent font-bold">
+                ${isOwner ? '👑' : '👤'}
+              </div>
+              <div>
+                <span class="text-xs font-bold text-white flex items-center gap-2">${toStylishFont(loggedInUser.name)} ${badgeHTML}</span>
+                <span class="text-[10px] text-emerald-400">Verified Member</span>
+              </div>
+            </div>
+          `;
+        }
+
+        const sidebarMembers = document.getElementById('sidebarMembers');
+        if(sidebarMembers && !document.getElementById('side_member_' + loggedInUser.name)) {
+          sidebarMembers.innerHTML += `
+            <div id="side_member_${loggedInUser.name}" class="flex items-center justify-between text-xs">
+              <div class="flex items-center gap-2">
+                <div class="w-7 h-7 rounded-full bg-goldAccent/20 flex items-center justify-center text-[10px]">✨</div>
+                <span class="text-white font-bold">${toStylishFont(loggedInUser.name)}</span>
+              </div>
+              ${badgeHTML || '<span class="text-[10px] text-emerald-400">Online</span>'}
+            </div>
+          `;
+        }
+      }
+    }
+
+    function toStylishFont(str) {
+      const map = {
+        'a':'𝒂','b':'𝒃','c':'𝒄','d':'𝒅','e':'𝒆','f':'𝒇','g':'𝒈','h':'𝒉','i':'𝒊','j':'𝒋','k':'𝒌','l':'𝒍','m':'𝒎',
+        'n':'𝒏','o':'𝒐','p':'𝒑','q':'𝒒','r':'𝒓','s':'𝒔','t':'𝒕','u':'𝒖','v':'𝒗','w':'𝒘','x':'𝒙','y':'𝒚','z':'𝒛',
+        'A':'𝑨','B':'𝑩','C':'𝑪','D':'𝑫','E':'𝑬','F':'𝑭','G':'𝑮','H':'𝑯','I':'𝑰','J':'𝑱','K':'𝑲','L':'𝑳','M':'𝑴',
+        'N':'𝑵','O':'𝑶','P':'𝑷','Q':'𝑸','R':'𝑹','S':'𝑺','T':'𝑻','U':'𝑼','V':'𝑽','W':'𝑾','X':'𝑿','Y':'𝑾','Z':'𝒁',
+        '0':'𝟎','1':'𝟏','2':'𝟐','3':'𝟑','4':'𝟒','5':'𝟓','6':'𝟔','7':'𝟕','8':'𝟖','9':'𝟗'
+      };
+      return str.split('').map(char => map[char] || char).join('');
+    }
+
+    function openAuthModal() {
+      document.getElementById('authModal').classList.remove('hidden');
+      document.getElementById('authModal').classList.add('flex');
+    }
+
+    function closeAuthModal() {
+      document.getElementById('authModal').classList.add('hidden');
+      document.getElementById('authModal').classList.remove('flex');
+    }
+
+    function openUploadModal() {
+      if (!loggedInUser) {
+        alert('Please Sign Up with Gmail & Phone Number first to upload new methods! 🔒');
+        openAuthModal();
+        return;
+      }
+      document.getElementById('uploadModal').classList.remove('hidden');
+      document.getElementById('uploadModal').classList.add('flex');
+    }
+
+    function closeUploadModal() {
+      document.getElementById('uploadModal').classList.add('hidden');
+      document.getElementById('uploadModal').classList.remove('flex');
+    }
+
+    function handleUserSignUp(e) {
+      e.preventDefault();
+      const name = document.getElementById('signupName').value;
+      const email = document.getElementById('signupEmail').value;
+      const phone = document.getElementById('signupPhone').value;
+
+      loggedInUser = { name, email, phone };
+      localStorage.setItem('arthik_user', JSON.stringify(loggedInUser));
+
+      updateAuthUI();
+      closeAuthModal();
+      alert('Sign up successful! You are now verified and added to the community group chat. 🎉');
+    }
+
+    function handleMethodUpload(e) {
+      e.preventDefault();
+      const title = document.getElementById('methodTitleInput').value;
+      const content = document.getElementById('methodContentInput').value;
+
+      const newMethod = {
+        name: loggedInUser.name,
+        phone: loggedInUser.phone,
+        title: title,
+        content: content,
+        time: 'Just now'
+      };
+
+      let userMethods = JSON.parse(localStorage.getItem('arthik_methods') || '[]');
+      userMethods.unshift(newMethod);
+      localStorage.setItem('arthik_methods', JSON.stringify(userMethods));
+
+      document.getElementById('methodTitleInput').value = '';
+      document.getEle
