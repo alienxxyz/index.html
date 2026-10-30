@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SNUFFe — Digital Marketplace</title>
+  <title>Arthik Portal — Financial Tools & Digital Services</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- FontAwesome Icons CDN -->
@@ -17,8 +17,8 @@
             brandDark: '#0B0F17',
             brandCard: '#151C28',
             brandBorder: '#232D3F',
-            brandAccent: '#6366F1',
-            brandGlow: '#4F46E5'
+            brandAccent: '#10B981', // Emerald Green Accent for Financial Theme
+            brandGlow: '#059669'
           }
         }
       }
@@ -40,17 +40,16 @@
     }
   </style>
 </head>
-<body class="bg-brandDark text-gray-100 font-sans antialiased selection:bg-brandAccent selection:text-white">
+<body class="bg-brandDark text-gray-100 font-sans antialiased selection:bg-emerald-500 selection:text-white">
 
   <!-- Top Announcement Bar -->
-  <div class="bg-gradient-to-r from-amber-600 via-purple-600 to-indigo-600 text-xs font-semibold py-2 overflow-hidden border-b border-white/10">
+  <div class="bg-gradient-to-r from-emerald-600 via-teal-600 to-indigo-600 text-xs font-semibold py-2 overflow-hidden border-b border-white/10">
     <div class="animate-marquee whitespace-nowrap flex gap-8 items-center">
-      <span>🪔 SPECIAL OFFER: BUY 2 GET 1 FREE · INSTANT DIGITAL ACCESS</span>
+      <span>📈 ARTHIK PORTAL: PREMIUM FINANCIAL GUIDES & TOOLS</span>
       <span>⚡ PAY WITH UPI OR CRYPTO (USDT)</span>
-      <span>🚀 LIVE MARKETPLACE BY TEAM APEX</span>
-      <span>🪔 SPECIAL OFFER: BUY 2 GET 1 FREE · INSTANT DIGITAL ACCESS</span>
+      <span>🚀 INSTANT DIGITAL ACCESS AFTER PAYMENT VERIFICATION</span>
+      <span>📈 ARTHIK PORTAL: PREMIUM FINANCIAL GUIDES & TOOLS</span>
       <span>⚡ PAY WITH UPI OR CRYPTO (USDT)</span>
-      <span>🚀 LIVE MARKETPLACE BY TEAM APEX</span>
     </div>
   </div>
 
@@ -58,16 +57,16 @@
   <nav class="sticky top-0 z-40 bg-brandDark/80 backdrop-blur-md border-b border-brandBorder px-4 py-3.5">
     <div class="max-w-6xl mx-auto flex items-center justify-between">
       <a href="#" class="flex items-center gap-2 text-xl font-bold tracking-wider text-white">
-        <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-purple-400">SNUFFe</span>
-        <span class="text-[10px] px-2 py-0.5 rounded bg-brandBorder text-gray-400 uppercase font-mono">v2.0</span>
+        <span class="bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-teal-300">Arthik Portal</span>
+        <span class="text-[10px] px-2 py-0.5 rounded bg-brandBorder text-emerald-400 uppercase font-mono">OFFICIAL</span>
       </a>
       <div class="hidden md:flex items-center gap-6 text-sm text-gray-400">
         <a href="#catalog" class="hover:text-white transition">Catalog</a>
         <a href="#process" class="hover:text-white transition">How it works</a>
         <a href="#faq" class="hover:text-white transition">FAQ</a>
       </div>
-      <button onclick="openCheckout('All Access Pass', '₹499')" class="px-4 py-2 text-xs font-medium bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg transition shadow-lg shadow-indigo-600/30 flex items-center gap-2">
-        <i class="fa-solid fa-bolt"></i> My Orders
+      <button onclick="openCheckout('All Access Pass', '₹499')" class="px-4 py-2 text-xs font-medium bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg transition shadow-lg shadow-emerald-600/30 flex items-center gap-2">
+        <i class="fa-solid fa-wallet"></i> My Orders
       </button>
     </div>
   </nav>
@@ -75,20 +74,20 @@
   <!-- Hero Section -->
   <section class="relative px-4 py-16 md:py-24 max-w-4xl mx-auto text-center">
     <div class="absolute inset-0 -z-10 flex items-center justify-center">
-      <div class="w-72 h-72 bg-indigo-600/20 rounded-full blur-3xl"></div>
+      <div class="w-72 h-72 bg-emerald-600/20 rounded-full blur-3xl"></div>
     </div>
-    <span class="px-3 py-1 text-xs font-medium text-indigo-400 bg-indigo-950/60 border border-indigo-800/50 rounded-full inline-block mb-4">
-      ✨ The marketplace for methods, tools & services
+    <span class="px-3 py-1 text-xs font-medium text-emerald-400 bg-emerald-950/60 border border-emerald-800/50 rounded-full inline-block mb-4">
+      💡 Aapka Digital Financial Partner
     </span>
     <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight leading-tight mb-4">
-      SNUFFe <span class="text-gray-400 text-2xl md:text-3xl font-normal">by Team Apex</span>
+      Arthik Portal <span class="text-gray-400 text-2xl md:text-3xl font-normal">Services</span>
     </h1>
     <p class="text-gray-400 text-base md:text-lg max-w-2xl mx-auto mb-8">
-      Pick what you need, pay instantly via UPI or Crypto, and get digital delivery right after payment confirmation.
+      Sahi financial methods, trading guides aur digital tools ek hi jagah. Instant UPI ya Crypto payment karein aur turant access paayein.
     </p>
     <div class="flex flex-wrap items-center justify-center gap-4">
-      <a href="#catalog" class="px-6 py-3 bg-white text-black font-semibold rounded-xl hover:bg-gray-200 transition text-sm">
-        Browse Marketplace
+      <a href="#catalog" class="px-6 py-3 bg-emerald-500 text-black font-semibold rounded-xl hover:bg-emerald-400 transition text-sm">
+        Explore Services
       </a>
       <a href="#process" class="px-6 py-3 bg-brandCard border border-brandBorder text-gray-300 font-semibold rounded-xl hover:border-gray-600 transition text-sm">
         How It Works
@@ -100,15 +99,15 @@
   <section class="max-w-4xl mx-auto px-4 mb-16">
     <div class="grid grid-cols-3 bg-brandCard border border-brandBorder rounded-2xl p-4 text-center divide-x divide-brandBorder">
       <div>
-        <p class="text-xl md:text-2xl font-bold text-white">100%</p>
-        <p class="text-xs text-gray-400">Instant Delivery</p>
+        <p class="text-xl md:text-2xl font-bold text-emerald-400">100%</p>
+        <p class="text-xs text-gray-400">Secure & Direct</p>
       </div>
       <div>
         <p class="text-xl md:text-2xl font-bold text-white">UPI / USDT</p>
         <p class="text-xs text-gray-400">Accepted</p>
       </div>
       <div>
-        <p class="text-xl md:text-2xl font-bold text-white">24/7</p>
+        <p class="text-xl md:text-2xl font-bold text-emerald-400">24/7</p>
         <p class="text-xs text-gray-400">Support</p>
       </div>
     </div>
@@ -118,15 +117,15 @@
   <section id="catalog" class="max-w-6xl mx-auto px-4 py-12">
     <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
       <div>
-        <h2 class="text-2xl font-bold text-white">Methods & Tools</h2>
-        <p class="text-sm text-gray-400">Everything available for instant purchase</p>
+        <h2 class="text-2xl font-bold text-white">Available Services & Tools</h2>
+        <p class="text-sm text-gray-400">Pick what you need for instant access</p>
       </div>
       <!-- Filter Tags -->
       <div class="flex gap-2 overflow-x-auto pb-2 text-xs">
-        <button class="px-3 py-1.5 rounded-lg bg-indigo-600 text-white font-medium">All</button>
-        <button class="px-3 py-1.5 rounded-lg bg-brandCard text-gray-400 hover:text-white border border-brandBorder">Editing Pack</button>
-        <button class="px-3 py-1.5 rounded-lg bg-brandCard text-gray-400 hover:text-white border border-brandBorder">VFX Tools</button>
-        <button class="px-3 py-1.5 rounded-lg bg-brandCard text-gray-400 hover:text-white border border-brandBorder">Guides</button>
+        <button class="px-3 py-1.5 rounded-lg bg-emerald-600 text-white font-medium">All</button>
+        <button class="px-3 py-1.5 rounded-lg bg-brandCard text-gray-400 hover:text-white border border-brandBorder">Finance Guides</button>
+        <button class="px-3 py-1.5 rounded-lg bg-brandCard text-gray-400 hover:text-white border border-brandBorder">Tools</button>
+        <button class="px-3 py-1.5 rounded-lg bg-brandCard text-gray-400 hover:text-white border border-brandBorder">Growth Packs</button>
       </div>
     </div>
 
@@ -134,63 +133,63 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       
       <!-- Card 1 -->
-      <div class="bg-brandCard border border-brandBorder rounded-2xl p-5 hover:border-indigo-500/50 transition group flex flex-col justify-between">
+      <div class="bg-brandCard border border-brandBorder rounded-2xl p-5 hover:border-emerald-500/50 transition group flex flex-col justify-between">
         <div>
           <div class="flex justify-between items-start mb-3">
-            <span class="text-[10px] font-bold text-emerald-400 bg-emerald-950/80 border border-emerald-800/50 px-2 py-0.5 rounded">INSTANT ACCESS</span>
-            <span class="text-xs text-gray-500 font-mono">ID: #01</span>
+            <span class="text-[10px] font-bold text-emerald-400 bg-emerald-950/80 border border-emerald-800/50 px-2 py-0.5 rounded">POPULAR</span>
+            <span class="text-xs text-gray-500 font-mono">ID: #AP01</span>
           </div>
-          <h3 class="text-lg font-bold text-white mb-2 group-hover:text-indigo-400 transition">Ultimate VFX Overlay Bundle</h3>
-          <p class="text-sm text-gray-400 mb-6">4K light leaks, glowing particles, film dust & cinematic transitions for video editors.</p>
+          <h3 class="text-lg font-bold text-white mb-2 group-hover:text-emerald-400 transition">Personal Finance & Investment Guide</h3>
+          <p class="text-sm text-gray-400 mb-6">Beginners ke liye step-by-step money management aur smart investment strategies PDF kit.</p>
         </div>
         <div class="flex items-center justify-between border-t border-brandBorder pt-4">
           <div>
             <span class="text-xs text-gray-500 block">Price</span>
             <span class="text-lg font-bold text-white">₹299</span>
           </div>
-          <button onclick="openCheckout('Ultimate VFX Overlay Bundle', '₹299')" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold rounded-lg transition">
+          <button onclick="openCheckout('Personal Finance & Investment Guide', '₹299')" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold rounded-lg transition">
             Buy Now
           </button>
         </div>
       </div>
 
       <!-- Card 2 -->
-      <div class="bg-brandCard border border-brandBorder rounded-2xl p-5 hover:border-indigo-500/50 transition group flex flex-col justify-between">
+      <div class="bg-brandCard border border-brandBorder rounded-2xl p-5 hover:border-emerald-500/50 transition group flex flex-col justify-between">
         <div>
           <div class="flex justify-between items-start mb-3">
-            <span class="text-[10px] font-bold text-purple-400 bg-purple-950/80 border border-purple-800/50 px-2 py-0.5 rounded">POPULAR</span>
-            <span class="text-xs text-gray-500 font-mono">ID: #02</span>
+            <span class="text-[10px] font-bold text-purple-400 bg-purple-950/80 border border-purple-800/50 px-2 py-0.5 rounded">HIGH DEMAND</span>
+            <span class="text-xs text-gray-500 font-mono">ID: #AP02</span>
           </div>
-          <h3 class="text-lg font-bold text-white mb-2 group-hover:text-indigo-400 transition">Instagram Growth & Monetization Guide</h3>
-          <p class="text-sm text-gray-400 mb-6">Step-by-step method to scale creator accounts and secure paid brand promotions.</p>
+          <h3 class="text-lg font-bold text-white mb-2 group-hover:text-emerald-400 transition">Online Earning Methods Pack</h3>
+          <p class="text-sm text-gray-400 mb-6">Tested digital marketing and freelancing techniques to build a steady income online.</p>
         </div>
         <div class="flex items-center justify-between border-t border-brandBorder pt-4">
           <div>
             <span class="text-xs text-gray-500 block">Price</span>
             <span class="text-lg font-bold text-white">₹499</span>
           </div>
-          <button onclick="openCheckout('Instagram Growth Guide', '₹499')" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold rounded-lg transition">
+          <button onclick="openCheckout('Online Earning Methods Pack', '₹499')" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold rounded-lg transition">
             Buy Now
           </button>
         </div>
       </div>
 
       <!-- Card 3 -->
-      <div class="bg-brandCard border border-brandBorder rounded-2xl p-5 hover:border-indigo-500/50 transition group flex flex-col justify-between">
+      <div class="bg-brandCard border border-brandBorder rounded-2xl p-5 hover:border-emerald-500/50 transition group flex flex-col justify-between">
         <div>
           <div class="flex justify-between items-start mb-3">
             <span class="text-[10px] font-bold text-amber-400 bg-amber-950/80 border border-amber-800/50 px-2 py-0.5 rounded">BEST VALUE</span>
-            <span class="text-xs text-gray-500 font-mono">ID: #03</span>
+            <span class="text-xs text-gray-500 font-mono">ID: #AP03</span>
           </div>
-          <h3 class="text-lg font-bold text-white mb-2 group-hover:text-indigo-400 transition">Complete Video Creator Kit</h3>
-          <p class="text-sm text-gray-400 mb-6">Sound FX library, Premiere Pro presets, and After Effects motion graphics templates.</p>
+          <h3 class="text-lg font-bold text-white mb-2 group-hover:text-emerald-400 transition">Complete Business Creator Toolkit</h3>
+          <p class="text-sm text-gray-400 mb-6">All-in-one bundle with templates, accounting sheets, and social media growth assets.</p>
         </div>
         <div class="flex items-center justify-between border-t border-brandBorder pt-4">
           <div>
             <span class="text-xs text-gray-500 block">Price</span>
             <span class="text-lg font-bold text-white">₹799</span>
           </div>
-          <button onclick="openCheckout('Complete Video Creator Kit', '₹799')" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold rounded-lg transition">
+          <button onclick="openCheckout('Complete Business Creator Toolkit', '₹799')" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold rounded-lg transition">
             Buy Now
           </button>
         </div>
@@ -203,23 +202,23 @@
   <section id="process" class="max-w-6xl mx-auto px-4 py-16 border-t border-brandBorder/50">
     <div class="text-center mb-12">
       <h2 class="text-2xl font-bold text-white">How It Works</h2>
-      <p class="text-sm text-gray-400">Simple 3-step process to get your digital files</p>
+      <p class="text-sm text-gray-400">Simple 3-step process to get instant delivery</p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       <div class="bg-brandCard border border-brandBorder p-6 rounded-2xl relative">
-        <span class="text-3xl font-extrabold text-indigo-500/30 mb-4 block">01</span>
-        <h3 class="text-lg font-bold text-white mb-2">Choose a Listing</h3>
-        <p class="text-sm text-gray-400">Browse methods and tools, select what you need, and view the pricing details.</p>
+        <span class="text-3xl font-extrabold text-emerald-500/30 mb-4 block">01</span>
+        <h3 class="text-lg font-bold text-white mb-2">Select Item</h3>
+        <p class="text-sm text-gray-400">Catalog me se apna pasandida guide ya digital tool select karein.</p>
       </div>
       <div class="bg-brandCard border border-brandBorder p-6 rounded-2xl relative">
-        <span class="text-3xl font-extrabold text-indigo-500/30 mb-4 block">02</span>
-        <h3 class="text-lg font-bold text-white mb-2">Pay Your Way</h3>
-        <p class="text-sm text-gray-400">Scan the QR code with any UPI app (GPay/PhonePe/Paytm) or send USDT (Crypto).</p>
+        <span class="text-3xl font-extrabold text-emerald-500/30 mb-4 block">02</span>
+        <h3 class="text-lg font-bold text-white mb-2">Pay via UPI / Crypto</h3>
+        <p class="text-sm text-gray-400">QR code scan karke kisi bhi UPI App (GPay/PhonePe/Paytm) ya USDT se payment karein.</p>
       </div>
       <div class="bg-brandCard border border-brandBorder p-6 rounded-2xl relative">
-        <span class="text-3xl font-extrabold text-indigo-500/30 mb-4 block">03</span>
+        <span class="text-3xl font-extrabold text-emerald-500/30 mb-4 block">03</span>
         <h3 class="text-lg font-bold text-white mb-2">Get Instant Access</h3>
-        <p class="text-sm text-gray-400">Submit your transaction Reference/UTR ID. Once verified, your download link unlocks.</p>
+        <p class="text-sm text-gray-400">Payment UTR ID enter karein aur turant download link paayein.</p>
       </div>
     </div>
   </section>
@@ -230,20 +229,20 @@
     <div class="space-y-4">
       <details class="bg-brandCard border border-brandBorder rounded-xl p-4 cursor-pointer group">
         <summary class="font-semibold text-white list-none flex justify-between items-center">
-          <span>How do I receive my product after payment?</span>
+          <span>Payment ke kitne time baad access milega?</span>
           <i class="fa-solid fa-chevron-down text-xs text-gray-400 group-open:rotate-180 transition"></i>
         </summary>
         <p class="text-sm text-gray-400 mt-3 leading-relaxed">
-          After submitting your payment Reference/UTR ID in the checkout popup, your link will unlock directly on the screen or via Telegram/Email within minutes.
+          UTR/Reference number submit karte hi payment verify hote hi aapka download link screen par unlock ho jayega.
         </p>
       </details>
       <details class="bg-brandCard border border-brandBorder rounded-xl p-4 cursor-pointer group">
         <summary class="font-semibold text-white list-none flex justify-between items-center">
-          <span>What payment methods are supported?</span>
+          <span>Kaun-kaun se payment methods accepted hain?</span>
           <i class="fa-solid fa-chevron-down text-xs text-gray-400 group-open:rotate-180 transition"></i>
         </summary>
         <p class="text-sm text-gray-400 mt-3 leading-relaxed">
-          We accept all Indian UPI apps (Google Pay, PhonePe, Paytm, BHIM) and Crypto USDT (TRC20/BEP20).
+          Aap Google Pay, PhonePe, Paytm, BHIM UPI ya Crypto (USDT) se payment kar sakte hain.
         </p>
       </details>
     </div>
@@ -252,14 +251,14 @@
   <!-- Footer -->
   <footer class="border-t border-brandBorder bg-black/40 py-8 px-4 text-center text-xs text-gray-500">
     <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 mb-4">
-      <span class="text-white font-bold text-base">SNUFFe</span>
+      <span class="text-white font-bold text-base">Arthik Portal</span>
       <div class="flex gap-6 text-gray-400">
         <a href="#" class="hover:text-white">Terms of Service</a>
         <a href="#" class="hover:text-white">Privacy Policy</a>
-        <a href="#" class="hover:text-white">Telegram Support</a>
+        <a href="#" class="hover:text-white">Support</a>
       </div>
     </div>
-    <p>© 2026 SNUFFe · Team Apex. All rights reserved.</p>
+    <p>© 2026 Arthik Portal. All rights reserved.</p>
   </footer>
 
   <!-- Checkout Modal Popup -->
@@ -268,30 +267,29 @@
       <button onclick="closeCheckout()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-lg">
         <i class="fa-solid fa-xmark"></i>
       </button>
-      <h3 class="text-xl font-bold text-white mb-1">Complete Purchase</h3>
-      <p id="modalProductName" class="text-sm text-indigo-400 font-medium mb-4">Product Name</p>
+      <h3 class="text-xl font-bold text-white mb-1">Checkout — Arthik Portal</h3>
+      <p id="modalProductName" class="text-sm text-emerald-400 font-medium mb-4">Product Name</p>
 
       <div class="bg-brandDark border border-brandBorder p-4 rounded-xl text-center mb-4">
         <p class="text-xs text-gray-400 mb-2">Scan QR code using any UPI App</p>
-        <!-- Dummy QR Code placeholder -->
         <div class="bg-white p-2 rounded-lg inline-block mb-2">
-          <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=upi://pay?pa=demo@upi&pn=SNUFFe" alt="UPI QR" class="w-32 h-32" />
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=upi://pay?pa=arthikportal@upi&pn=ArthikPortal" alt="UPI QR" class="w-32 h-32" />
         </div>
-        <p class="text-xs text-gray-300 font-mono">UPI ID: <span class="text-indigo-400">snuffe@upi</span></p>
+        <p class="text-xs text-gray-300 font-mono">UPI ID: <span class="text-emerald-400">arthikportal@upi</span></p>
         <p class="text-lg font-bold text-white mt-1" id="modalProductPrice">₹0</p>
       </div>
 
       <form onsubmit="handlePaymentSubmit(event)" class="space-y-3">
         <div>
-          <label class="block text-xs text-gray-400 mb-1">UPI Reference / Transaction UTR No.</label>
-          <input type="text" required placeholder="12-digit UTR Number" class="w-full bg-brandDark border border-brandBorder rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-indigo-500" />
+          <label class="block text-xs text-gray-400 mb-1">UPI Reference / UTR Number</label>
+          <input type="text" required placeholder="12-digit UTR Number" class="w-full bg-brandDark border border-brandBorder rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-emerald-500" />
         </div>
         <div>
-          <label class="block text-xs text-gray-400 mb-1">Your Email / Telegram Username</label>
-          <input type="text" required placeholder="@username or email" class="w-full bg-brandDark border border-brandBorder rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-indigo-500" />
+          <label class="block text-xs text-gray-400 mb-1">Your Email or Telegram Username</label>
+          <input type="text" required placeholder="@username or email" class="w-full bg-brandDark border border-brandBorder rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-emerald-500" />
         </div>
-        <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-2.5 rounded-lg text-sm transition">
-          Submit Payment & Get Access
+        <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold py-2.5 rounded-lg text-sm transition">
+          Submit Payment & Unlock Link
         </button>
       </form>
     </div>
@@ -313,9 +311,10 @@
 
     function handlePaymentSubmit(e) {
       e.preventDefault();
-      alert('Payment details submitted successfully! Your order is being verified.');
+      alert('Payment details submitted! Your order is being verified by Arthik Portal.');
       closeCheckout();
     }
   </script>
 </body>
-</html>
+                                                                                           </html>
+                                                                                           
