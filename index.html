@@ -73,12 +73,14 @@
 
       <!-- Action Buttons -->
       <div class="flex items-center gap-3">
-        <button onclick="openUploadModal()" class="px-3.5 py-1.5 text-xs font-bold bg-stone-900 border border-goldAccent/40 text-goldAccent hover:bg-goldAccent hover:text-black rounded-lg transition flex items-center gap-2">
+        <button type="button" onclick="openUploadModal()" class="px-3.5 py-1.5 text-xs font-bold bg-stone-900 border border-goldAccent/40 text-goldAccent hover:bg-goldAccent hover:text-black rounded-lg transition flex items-center gap-2 cursor-pointer">
           <i class="fa-solid fa-plus"></i> 𝑼𝒑𝒍𝒐𝒂𝒅 𝑵𝒆𝒘 𝑴𝒆𝒕𝒉𝒐𝒅𝒔
         </button>
-        <button id="navAuthBtn" onclick="openAuthModal()" class="px-4 py-1.5 text-xs font-semibold bg-goldAccent hover:bg-goldHover text-black rounded-lg transition">
-          𝑺𝒊𝒈𝒏 𝑼𝒑 / 𝑳𝒐𝒈𝒊𝒏
-        </button>
+        <div id="authNavContainer">
+          <button type="button" onclick="openAuthModal()" class="px-4 py-1.5 text-xs font-semibold bg-goldAccent hover:bg-goldHover text-black rounded-lg transition cursor-pointer">
+            𝑺𝒊𝒈𝒏 𝑼𝒑 / 𝑳𝒐𝒈𝒊𝒏
+          </button>
+        </div>
       </div>
     </div>
   </nav>
@@ -102,7 +104,7 @@
         </p>
       </div>
 
-      <!-- Twitter/X Style Quick Upload Prompt Box -->
+      <!-- Quick Upload Prompt Box -->
       <div class="bg-instaCard border border-instaBorder rounded-xl p-4">
         <div class="flex gap-3 items-start">
           <div class="w-10 h-10 rounded-full bg-goldAccent/20 border border-goldAccent/40 flex items-center justify-center text-goldAccent font-bold flex-shrink-0">
@@ -112,7 +114,7 @@
             <textarea onclick="openUploadModal()" placeholder="What new method or strategy do you want to share today?..." class="w-full bg-black border border-instaBorder rounded-xl p-3 text-xs text-white focus:outline-none resize-none h-16 cursor-pointer" readonly></textarea>
             <div class="flex justify-between items-center mt-2">
               <span class="text-[10px] text-stone-500">Share financial tips instantly</span>
-              <button onclick="openUploadModal()" class="px-4 py-1.5 bg-goldAccent hover:bg-goldHover text-black text-xs font-bold rounded-lg transition">
+              <button type="button" onclick="openUploadModal()" class="px-4 py-1.5 bg-goldAccent hover:bg-goldHover text-black text-xs font-bold rounded-lg transition cursor-pointer">
                 𝑷𝒐𝒔𝒕 𝑴𝒆𝒕𝒉𝒐𝒅 🚀
               </button>
             </div>
@@ -168,7 +170,7 @@
         <!-- Chat Input Form -->
         <form onsubmit="sendChatMessage(event)" class="p-3 bg-black border-t border-instaBorder flex gap-2">
           <input type="text" id="chatInput" placeholder="Message group with emojis 😊..." class="flex-1 bg-instaCard border border-instaBorder rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-goldAccent" />
-          <button type="submit" class="bg-goldAccent hover:bg-goldHover text-black px-4 py-2 text-xs font-bold rounded-lg transition">
+          <button type="submit" class="bg-goldAccent hover:bg-goldHover text-black px-4 py-2 text-xs font-bold rounded-lg transition cursor-pointer">
             𝑺𝒆𝒏𝒅 🚀
           </button>
         </form>
@@ -186,7 +188,7 @@
             <span class="text-[10px] text-stone-500">Not Signed In</span>
           </div>
         </div>
-        <button onclick="openAuthModal()" class="text-xs text-goldAccent font-bold hover:underline">Join</button>
+        <button type="button" onclick="openAuthModal()" class="text-xs text-goldAccent font-bold hover:underline cursor-pointer">Join</button>
       </div>
 
       <div class="bg-instaCard border border-instaBorder p-4 rounded-xl space-y-4">
@@ -210,7 +212,7 @@
   <!-- UPLOAD MODAL -->
   <div id="uploadModal" class="fixed inset-0 bg-black/90 backdrop-blur-md z-50 hidden items-center justify-center p-4">
     <div class="bg-instaCard border border-goldAccent/40 rounded-xl max-w-lg w-full p-5 relative aura-border">
-      <button onclick="closeUploadModal()" class="absolute top-4 right-4 text-stone-500 hover:text-white text-lg">
+      <button type="button" onclick="closeUploadModal()" class="absolute top-4 right-4 text-stone-500 hover:text-white text-lg cursor-pointer">
         <i class="fa-solid fa-xmark"></i>
       </button>
       <h3 class="text-sm font-bold text-white mb-3 flex items-center gap-2">
@@ -222,7 +224,7 @@
         <textarea id="methodContentInput" required placeholder="Write your method details here..." class="w-full bg-black border border-instaBorder rounded-lg p-3 text-xs text-white focus:outline-none focus:border-goldAccent h-28 resize-none"></textarea>
         <div class="flex justify-between items-center pt-2">
           <span class="text-[10px] text-stone-500">Publicly visible</span>
-          <button type="submit" class="px-5 py-2 bg-goldAccent hover:bg-goldHover text-black text-xs font-bold rounded-lg transition">
+          <button type="submit" class="px-5 py-2 bg-goldAccent hover:bg-goldHover text-black text-xs font-bold rounded-lg transition cursor-pointer">
             𝑷𝒖𝒃𝒍𝒊𝒔𝒉 𝑴𝒆𝒕𝒉𝒐𝒅 ⚡
           </button>
         </div>
@@ -233,7 +235,7 @@
   <!-- SIGN UP / LOGIN MODAL -->
   <div id="authModal" class="fixed inset-0 bg-black/90 backdrop-blur-md z-50 hidden items-center justify-center p-4">
     <div class="bg-instaCard border border-goldAccent/40 rounded-xl max-w-md w-full p-6 relative aura-border">
-      <button onclick="closeAuthModal()" class="absolute top-4 right-4 text-stone-500 hover:text-white text-lg">
+      <button type="button" onclick="closeAuthModal()" class="absolute top-4 right-4 text-stone-500 hover:text-white text-lg cursor-pointer">
         <i class="fa-solid fa-xmark"></i>
       </button>
       <h3 class="text-xl font-bold text-white mb-1">𝑴𝒆𝒎𝒃𝒆𝒓 𝑺𝒊𝒈𝒏 𝑼𝒑 📝</h3>
@@ -252,7 +254,7 @@
           <label class="block text-[10px] uppercase tracking-widest text-stone-400 mb-1">Phone Number</label>
           <input type="tel" id="signupPhone" required placeholder="+91 98765..." class="w-full bg-black border border-instaBorder rounded-lg px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-goldAccent" />
         </div>
-        <button type="submit" class="w-full bg-goldAccent hover:bg-goldHover text-black font-bold py-3 text-xs uppercase tracking-widest rounded-lg transition">
+        <button type="submit" class="w-full bg-goldAccent hover:bg-goldHover text-black font-bold py-3 text-xs uppercase tracking-widest rounded-lg transition cursor-pointer">
           𝑺𝒊𝒈𝒏 𝑼𝒑 & 𝑱𝒐𝒊𝒏 𝑪𝒉𝒂𝒕 ⚡
         </button>
       </form>
@@ -269,7 +271,7 @@
     };
 
     function updateAuthUI() {
-      const authBtn = document.getElementById('navAuthBtn');
+      const authNavContainer = document.getElementById('authNavContainer');
       const statusText = document.getElementById('groupStatus');
       const userSide = document.getElementById('userProfileSide');
 
@@ -277,20 +279,29 @@
         const isOwner = loggedInUser.name.toLowerCase() === 'arthikadmin' || loggedInUser.phone === '+919795805641';
         const badgeHTML = isOwner ? ' <span class="owner-badge">𝐎ᴡɴᴇʀ 🔌</span>' : '';
         
-        authBtn.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-400 mr-1"></i> ${toStylishFont(loggedInUser.name)}`;
-        authBtn.onclick = null;
+        authNavContainer.innerHTML = `
+          <div class="flex items-center gap-2">
+            <span class="text-xs text-emerald-400 font-bold">${toStylishFont(loggedInUser.name)}</span>
+            <button type="button" onclick="handleLogout()" class="px-3 py-1 text-[11px] font-semibold bg-stone-900 border border-red-500/40 text-red-400 hover:bg-red-500 hover:text-white rounded-lg transition cursor-pointer">
+              Logout
+            </button>
+          </div>
+        `;
         if(statusText) statusText.innerText = `Joined group as: ${loggedInUser.name}`;
 
         if(userSide) {
           userSide.innerHTML = `
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-full bg-goldAccent/20 border border-goldAccent/40 flex items-center justify-center text-goldAccent font-bold">
-                ${isOwner ? '👑' : '👤'}
+            <div class="flex items-center justify-between w-full">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-goldAccent/20 border border-goldAccent/40 flex items-center justify-center text-goldAccent font-bold">
+                  ${isOwner ? '👑' : '👤'}
+                </div>
+                <div>
+                  <span class="text-xs font-bold text-white flex items-center gap-2">${toStylishFont(loggedInUser.name)} ${badgeHTML}</span>
+                  <span class="text-[10px] text-emerald-400">Verified Member</span>
+                </div>
               </div>
-              <div>
-                <span class="text-xs font-bold text-white flex items-center gap-2">${toStylishFont(loggedInUser.name)} ${badgeHTML}</span>
-                <span class="text-[10px] text-emerald-400">Verified Member</span>
-              </div>
+              <button type="button" onclick="handleLogout()" class="text-[10px] text-red-400 hover:underline cursor-pointer">Logout</button>
             </div>
           `;
         }
@@ -305,6 +316,24 @@
               </div>
               ${badgeHTML || '<span class="text-[10px] text-emerald-400">Online</span>'}
             </div>
+          `;
+        }
+      } else {
+        authNavContainer.innerHTML = `
+          <button type="button" onclick="openAuthModal()" class="px-4 py-1.5 text-xs font-semibold bg-goldAccent hover:bg-goldHover text-black rounded-lg transition cursor-pointer">
+            𝑺𝒊𝒈𝒏 𝑼𝒑 / 𝑳𝒐𝒈𝒊𝒏
+          </button>
+        `;
+        if(userSide) {
+          userSide.innerHTML = `
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-stone-800 border border-instaBorder flex items-center justify-center text-stone-400 font-bold">👤</div>
+              <div>
+                <span class="text-xs font-bold text-white block">Guest User</span>
+                <span class="text-[10px] text-stone-500">Not Signed In</span>
+              </div>
+            </div>
+            <button type="button" onclick="openAuthModal()" class="text-xs text-goldAccent font-bold hover:underline cursor-pointer">Join</button>
           `;
         }
       }
@@ -353,53 +382,4 @@
       const email = document.getElementById('signupEmail').value.trim();
       const phone = document.getElementById('signupPhone').value.trim();
 
-      if (!name || !email || !phone) {
-        alert('Please fill in all fields!');
-        return;
-      }
-
-      loggedInUser = { name, email, phone };
-      localStorage.setItem('arthik_user', JSON.stringify(loggedInUser));
-
-      updateAuthUI();
-      closeAuthModal();
-      alert('Sign up successful! You are now verified and added to the community group chat. 🎉');
-    }
-
-    function handleMethodUpload(e) {
-      e.preventDefault();
-      const title = document.getElementById('methodTitleInput').value.trim();
-      const content = document.getElementById('methodContentInput').value.trim();
-
-      if (!title || !content) return;
-
-      const newMethod = {
-        name: loggedInUser.name,
-        phone: loggedInUser.phone,
-        title: title,
-        content: content,
-        time: 'Just now'
-      };
-
-      let userMethods = JSON.parse(localStorage.getItem('arthik_methods') || '[]');
-      userMethods.unshift(newMethod);
-      localStorage.setItem('arthik_methods', JSON.stringify(userMethods));
-
-      document.getElementById('methodTitleInput').value = '';
-      document.getElementById('methodContentInput').value = '';
-      closeUploadModal();
-      loadUserMethods();
-      alert('Method uploaded successfully to the public feed! ⚡');
-    }
-
-    function loadUserMethods() {
-      const feedContainer = document.getElementById('feedContainer');
-      let userMethods = JSON.parse(localStorage.getItem('arthik_methods') || '[]');
-      
-      let html = '';
-      userMethods.forEach(m => {
-        const isOwner = m.name.toLowerCase() === 'arthikadmin' || m.phone === '+919795805641';
-        const badgeHTML = isOwner ? ' <span class="owner-badge">𝐎ᴡɴᴇʀ 🔌</span>' : '';
-        
-        html += `
-          <article class="bg-instaCard border border-instaBorder rounded-xl overflow-hidden aura
+      if (!name || !email || !phon
