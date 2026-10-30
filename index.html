@@ -1,168 +1,321 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en" class="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SMM Panel - Login & Signup</title>
-    <style>
-        body { font-family: Arial, sans-serif; background: #0f172a; color: #fff; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-        .container { background: #1e293b; padding: 25px; border-radius: 12px; width: 320px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
-        h2 { text-align: center; margin-bottom: 20px; color: #38bdf8; }
-        input { width: 100%; padding: 10px; margin: 8px 0; background: #0f172a; border: 1px solid #334155; color: #fff; border-radius: 6px; box-sizing: border-box; }
-        button { width: 100%; padding: 10px; background: #38bdf8; border: none; color: #0f172a; font-weight: bold; border-radius: 6px; cursor: pointer; margin-top: 10px; }
-        button:hover { background: #0ea5e9; }
-        .hidden { display: none; }
-        .toggle-btn { background: none; border: none; color: #38bdf8; cursor: pointer; text-align: center; width: 100%; margin-top: 15px; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SNUFFe — Digital Marketplace</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brandDark: '#0B0F17',
+            brandCard: '#151C28',
+            brandBorder: '#232D3F',
+            brandAccent: '#6366F1',
+            brandGlow: '#4F46E5'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Custom Scrollbar & Marquee */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #0B0F17; }
+    ::-webkit-scrollbar-thumb { background: #232D3F; border-radius: 4px; }
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-marquee {
+      display: flex;
+      width: 200%;
+      animation: marquee 20s linear infinite;
+    }
+  </style>
 </head>
-<body>
+<body class="bg-brandDark text-gray-100 font-sans antialiased selection:bg-brandAccent selection:text-white">
 
-    <div class="container" id="auth-container">
-        <!-- साइन अप फॉर्म -->
-        <div id="signup-box">
-            <h2>खाता बनाएँ (Sign Up)</h2>
-            <input type="text" id="signup-username" placeholder="यूज़रनेम दर्ज करें">
-            <input type="email" id="signup-email" placeholder="ईमेल दर्ज करें">
-            <input type="password" id="signup-password" placeholder="पासवर्ड दर्ज करें">
-            <button onclick="handleSignUp()">रजिस्टर करें</button>
-            <button class="toggle-btn" onclick="toggleForm('login')">पहले से खाता है? लॉगिन करें</button>
-        </div>
+  <!-- Top Announcement Bar -->
+  <div class="bg-gradient-to-r from-amber-600 via-purple-600 to-indigo-600 text-xs font-semibold py-2 overflow-hidden border-b border-white/10">
+    <div class="animate-marquee whitespace-nowrap flex gap-8 items-center">
+      <span>🪔 SPECIAL OFFER: BUY 2 GET 1 FREE · INSTANT DIGITAL ACCESS</span>
+      <span>⚡ PAY WITH UPI OR CRYPTO (USDT)</span>
+      <span>🚀 LIVE MARKETPLACE BY TEAM APEX</span>
+      <span>🪔 SPECIAL OFFER: BUY 2 GET 1 FREE · INSTANT DIGITAL ACCESS</span>
+      <span>⚡ PAY WITH UPI OR CRYPTO (USDT)</span>
+      <span>🚀 LIVE MARKETPLACE BY TEAM APEX</span>
+    </div>
+  </div>
 
-        <!-- लॉगिन फॉर्म -->
-        <div id="login-box" class="hidden">
-            <h2>लॉगिन करें (Login)</h2>
-            <input type="email" id="login-email" placeholder="ईमेल दर्ज करें">
-            <input type="password" id="login-password" placeholder="पासवर्ड दर्ज करें">
-            <button onclick="handleLogin()">लॉगिन करें</button>
-            <button class="toggle-btn" onclick="toggleForm('signup')">नया खाता बनाएँ</button>
-        </div>
+  <!-- Navbar -->
+  <nav class="sticky top-0 z-40 bg-brandDark/80 backdrop-blur-md border-b border-brandBorder px-4 py-3.5">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2 text-xl font-bold tracking-wider text-white">
+        <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-purple-400">SNUFFe</span>
+        <span class="text-[10px] px-2 py-0.5 rounded bg-brandBorder text-gray-400 uppercase font-mono">v2.0</span>
+      </a>
+      <div class="hidden md:flex items-center gap-6 text-sm text-gray-400">
+        <a href="#catalog" class="hover:text-white transition">Catalog</a>
+        <a href="#process" class="hover:text-white transition">How it works</a>
+        <a href="#faq" class="hover:text-white transition">FAQ</a>
+      </div>
+      <button onclick="openCheckout('All Access Pass', '₹499')" class="px-4 py-2 text-xs font-medium bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg transition shadow-lg shadow-indigo-600/30 flex items-center gap-2">
+        <i class="fa-solid fa-bolt"></i> My Orders
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative px-4 py-16 md:py-24 max-w-4xl mx-auto text-center">
+    <div class="absolute inset-0 -z-10 flex items-center justify-center">
+      <div class="w-72 h-72 bg-indigo-600/20 rounded-full blur-3xl"></div>
+    </div>
+    <span class="px-3 py-1 text-xs font-medium text-indigo-400 bg-indigo-950/60 border border-indigo-800/50 rounded-full inline-block mb-4">
+      ✨ The marketplace for methods, tools & services
+    </span>
+    <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight leading-tight mb-4">
+      SNUFFe <span class="text-gray-400 text-2xl md:text-3xl font-normal">by Team Apex</span>
+    </h1>
+    <p class="text-gray-400 text-base md:text-lg max-w-2xl mx-auto mb-8">
+      Pick what you need, pay instantly via UPI or Crypto, and get digital delivery right after payment confirmation.
+    </p>
+    <div class="flex flex-wrap items-center justify-center gap-4">
+      <a href="#catalog" class="px-6 py-3 bg-white text-black font-semibold rounded-xl hover:bg-gray-200 transition text-sm">
+        Browse Marketplace
+      </a>
+      <a href="#process" class="px-6 py-3 bg-brandCard border border-brandBorder text-gray-300 font-semibold rounded-xl hover:border-gray-600 transition text-sm">
+        How It Works
+      </a>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <section class="max-w-4xl mx-auto px-4 mb-16">
+    <div class="grid grid-cols-3 bg-brandCard border border-brandBorder rounded-2xl p-4 text-center divide-x divide-brandBorder">
+      <div>
+        <p class="text-xl md:text-2xl font-bold text-white">100%</p>
+        <p class="text-xs text-gray-400">Instant Delivery</p>
+      </div>
+      <div>
+        <p class="text-xl md:text-2xl font-bold text-white">UPI / USDT</p>
+        <p class="text-xs text-gray-400">Accepted</p>
+      </div>
+      <div>
+        <p class="text-xl md:text-2xl font-bold text-white">24/7</p>
+        <p class="text-xs text-gray-400">Support</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Catalog -->
+  <section id="catalog" class="max-w-6xl mx-auto px-4 py-12">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+      <div>
+        <h2 class="text-2xl font-bold text-white">Methods & Tools</h2>
+        <p class="text-sm text-gray-400">Everything available for instant purchase</p>
+      </div>
+      <!-- Filter Tags -->
+      <div class="flex gap-2 overflow-x-auto pb-2 text-xs">
+        <button class="px-3 py-1.5 rounded-lg bg-indigo-600 text-white font-medium">All</button>
+        <button class="px-3 py-1.5 rounded-lg bg-brandCard text-gray-400 hover:text-white border border-brandBorder">Editing Pack</button>
+        <button class="px-3 py-1.5 rounded-lg bg-brandCard text-gray-400 hover:text-white border border-brandBorder">VFX Tools</button>
+        <button class="px-3 py-1.5 rounded-lg bg-brandCard text-gray-400 hover:text-white border border-brandBorder">Guides</button>
+      </div>
     </div>
 
-    <!-- डैशबोर्ड (लॉगिन के बाद दिखने वाला हिस्सा) -->
-    <div class="container hidden" id="dashboard-container">
-        <h2>स्वागत है! 🎉</h2>
-        <p>यूज़रनेम: <span id="user-display"></span></p>
-        <p>फॉलोअर्स काउंट: <span id="followers-display">0</span></p>
-        <button onclick="increaseFollowers()">फ्री फॉलोअर्स बढ़ाएं (+10)</button>
-        <button style="background: #ef4444; color: #fff; margin-top: 20px;" onclick="handleLogout()">लॉगआउट</button>
+    <!-- Product Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      
+      <!-- Card 1 -->
+      <div class="bg-brandCard border border-brandBorder rounded-2xl p-5 hover:border-indigo-500/50 transition group flex flex-col justify-between">
+        <div>
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-[10px] font-bold text-emerald-400 bg-emerald-950/80 border border-emerald-800/50 px-2 py-0.5 rounded">INSTANT ACCESS</span>
+            <span class="text-xs text-gray-500 font-mono">ID: #01</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2 group-hover:text-indigo-400 transition">Ultimate VFX Overlay Bundle</h3>
+          <p class="text-sm text-gray-400 mb-6">4K light leaks, glowing particles, film dust & cinematic transitions for video editors.</p>
+        </div>
+        <div class="flex items-center justify-between border-t border-brandBorder pt-4">
+          <div>
+            <span class="text-xs text-gray-500 block">Price</span>
+            <span class="text-lg font-bold text-white">₹299</span>
+          </div>
+          <button onclick="openCheckout('Ultimate VFX Overlay Bundle', '₹299')" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold rounded-lg transition">
+            Buy Now
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-brandCard border border-brandBorder rounded-2xl p-5 hover:border-indigo-500/50 transition group flex flex-col justify-between">
+        <div>
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-[10px] font-bold text-purple-400 bg-purple-950/80 border border-purple-800/50 px-2 py-0.5 rounded">POPULAR</span>
+            <span class="text-xs text-gray-500 font-mono">ID: #02</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2 group-hover:text-indigo-400 transition">Instagram Growth & Monetization Guide</h3>
+          <p class="text-sm text-gray-400 mb-6">Step-by-step method to scale creator accounts and secure paid brand promotions.</p>
+        </div>
+        <div class="flex items-center justify-between border-t border-brandBorder pt-4">
+          <div>
+            <span class="text-xs text-gray-500 block">Price</span>
+            <span class="text-lg font-bold text-white">₹499</span>
+          </div>
+          <button onclick="openCheckout('Instagram Growth Guide', '₹499')" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold rounded-lg transition">
+            Buy Now
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-brandCard border border-brandBorder rounded-2xl p-5 hover:border-indigo-500/50 transition group flex flex-col justify-between">
+        <div>
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-[10px] font-bold text-amber-400 bg-amber-950/80 border border-amber-800/50 px-2 py-0.5 rounded">BEST VALUE</span>
+            <span class="text-xs text-gray-500 font-mono">ID: #03</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2 group-hover:text-indigo-400 transition">Complete Video Creator Kit</h3>
+          <p class="text-sm text-gray-400 mb-6">Sound FX library, Premiere Pro presets, and After Effects motion graphics templates.</p>
+        </div>
+        <div class="flex items-center justify-between border-t border-brandBorder pt-4">
+          <div>
+            <span class="text-xs text-gray-500 block">Price</span>
+            <span class="text-lg font-bold text-white">₹799</span>
+          </div>
+          <button onclick="openCheckout('Complete Video Creator Kit', '₹799')" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold rounded-lg transition">
+            Buy Now
+          </button>
+        </div>
+      </div>
+
     </div>
+  </section>
 
-    <!-- Firebase SDKs -->
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
-        import { getFirestore, doc, setDoc, getDoc, updateDoc, increment } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+  <!-- How It Works -->
+  <section id="process" class="max-w-6xl mx-auto px-4 py-16 border-t border-brandBorder/50">
+    <div class="text-center mb-12">
+      <h2 class="text-2xl font-bold text-white">How It Works</h2>
+      <p class="text-sm text-gray-400">Simple 3-step process to get your digital files</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-brandCard border border-brandBorder p-6 rounded-2xl relative">
+        <span class="text-3xl font-extrabold text-indigo-500/30 mb-4 block">01</span>
+        <h3 class="text-lg font-bold text-white mb-2">Choose a Listing</h3>
+        <p class="text-sm text-gray-400">Browse methods and tools, select what you need, and view the pricing details.</p>
+      </div>
+      <div class="bg-brandCard border border-brandBorder p-6 rounded-2xl relative">
+        <span class="text-3xl font-extrabold text-indigo-500/30 mb-4 block">02</span>
+        <h3 class="text-lg font-bold text-white mb-2">Pay Your Way</h3>
+        <p class="text-sm text-gray-400">Scan the QR code with any UPI app (GPay/PhonePe/Paytm) or send USDT (Crypto).</p>
+      </div>
+      <div class="bg-brandCard border border-brandBorder p-6 rounded-2xl relative">
+        <span class="text-3xl font-extrabold text-indigo-500/30 mb-4 block">03</span>
+        <h3 class="text-lg font-bold text-white mb-2">Get Instant Access</h3>
+        <p class="text-sm text-gray-400">Submit your transaction Reference/UTR ID. Once verified, your download link unlocks.</p>
+      </div>
+    </div>
+  </section>
 
-        // आपकी Firebase कॉन्फ़िगरेशन
-        const firebaseConfig = {
-          apiKey: "AIzaSyAA5-wzmHpGLtTkDgCNJ6ZH-Gn...",
-          authDomain: "smm-pannel-9f14f.firebaseapp.com",
-          projectId: "smm-pannel-9f14f",
-          storageBucket: "smm-pannel-9f14f.appspot.com",
-          messagingSenderId: "218974351889",
-          appId: "1:218974351889:web:30c410a2171b9...",
-          measurementId: "G-LC19PSLG2M"
-        };
+  <!-- FAQ Section -->
+  <section id="faq" class="max-w-3xl mx-auto px-4 py-16 border-t border-brandBorder/50">
+    <h2 class="text-2xl font-bold text-white text-center mb-8">Frequently Asked Questions</h2>
+    <div class="space-y-4">
+      <details class="bg-brandCard border border-brandBorder rounded-xl p-4 cursor-pointer group">
+        <summary class="font-semibold text-white list-none flex justify-between items-center">
+          <span>How do I receive my product after payment?</span>
+          <i class="fa-solid fa-chevron-down text-xs text-gray-400 group-open:rotate-180 transition"></i>
+        </summary>
+        <p class="text-sm text-gray-400 mt-3 leading-relaxed">
+          After submitting your payment Reference/UTR ID in the checkout popup, your link will unlock directly on the screen or via Telegram/Email within minutes.
+        </p>
+      </details>
+      <details class="bg-brandCard border border-brandBorder rounded-xl p-4 cursor-pointer group">
+        <summary class="font-semibold text-white list-none flex justify-between items-center">
+          <span>What payment methods are supported?</span>
+          <i class="fa-solid fa-chevron-down text-xs text-gray-400 group-open:rotate-180 transition"></i>
+        </summary>
+        <p class="text-sm text-gray-400 mt-3 leading-relaxed">
+          We accept all Indian UPI apps (Google Pay, PhonePe, Paytm, BHIM) and Crypto USDT (TRC20/BEP20).
+        </p>
+      </details>
+    </div>
+  </section>
 
-        // Firebase इनिशियलाइज करें
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
-        const db = getFirestore(app);
+  <!-- Footer -->
+  <footer class="border-t border-brandBorder bg-black/40 py-8 px-4 text-center text-xs text-gray-500">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 mb-4">
+      <span class="text-white font-bold text-base">SNUFFe</span>
+      <div class="flex gap-6 text-gray-400">
+        <a href="#" class="hover:text-white">Terms of Service</a>
+        <a href="#" class="hover:text-white">Privacy Policy</a>
+        <a href="#" class="hover:text-white">Telegram Support</a>
+      </div>
+    </div>
+    <p>© 2026 SNUFFe · Team Apex. All rights reserved.</p>
+  </footer>
 
-        let currentUserUid = null;
+  <!-- Checkout Modal Popup -->
+  <div id="checkoutModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+    <div class="bg-brandCard border border-brandBorder rounded-2xl max-w-md w-full p-6 relative">
+      <button onclick="closeCheckout()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-lg">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <h3 class="text-xl font-bold text-white mb-1">Complete Purchase</h3>
+      <p id="modalProductName" class="text-sm text-indigo-400 font-medium mb-4">Product Name</p>
 
-        // फॉर्म स्विच करने का फंक्शन
-        window.toggleForm = function(type) {
-            if(type === 'login') {
-                document.getElementById('signup-box').classList.add('hidden');
-                document.getElementById('login-box').classList.remove('hidden');
-            } else {
-                document.getElementById('login-box').classList.add('hidden');
-                document.getElementById('signup-box').classList.remove('hidden');
-            }
-        }
+      <div class="bg-brandDark border border-brandBorder p-4 rounded-xl text-center mb-4">
+        <p class="text-xs text-gray-400 mb-2">Scan QR code using any UPI App</p>
+        <!-- Dummy QR Code placeholder -->
+        <div class="bg-white p-2 rounded-lg inline-block mb-2">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=upi://pay?pa=demo@upi&pn=SNUFFe" alt="UPI QR" class="w-32 h-32" />
+        </div>
+        <p class="text-xs text-gray-300 font-mono">UPI ID: <span class="text-indigo-400">snuffe@upi</span></p>
+        <p class="text-lg font-bold text-white mt-1" id="modalProductPrice">₹0</p>
+      </div>
 
-        // साइन-अप फंक्शन
-        window.handleSignUp = async function() {
-            const username = document.getElementById('signup-username').value;
-            const email = document.getElementById('signup-email').value;
-            const password = document.getElementById('signup-password').value;
+      <form onsubmit="handlePaymentSubmit(event)" class="space-y-3">
+        <div>
+          <label class="block text-xs text-gray-400 mb-1">UPI Reference / Transaction UTR No.</label>
+          <input type="text" required placeholder="12-digit UTR Number" class="w-full bg-brandDark border border-brandBorder rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-indigo-500" />
+        </div>
+        <div>
+          <label class="block text-xs text-gray-400 mb-1">Your Email / Telegram Username</label>
+          <input type="text" required placeholder="@username or email" class="w-full bg-brandDark border border-brandBorder rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-indigo-500" />
+        </div>
+        <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-2.5 rounded-lg text-sm transition">
+          Submit Payment & Get Access
+        </button>
+      </form>
+    </div>
+  </div>
 
-            try {
-                const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-                const user = userCredential.user;
-                
-                // Firestore में यूज़र का डेटा सेव करें
-                await setDoc(doc(db, "users", user.uid), {
-                    username: username,
-                    email: email,
-                    followersCount: 0,
-                    createdAt: new Date()
-                });
-                
-                alert("अकाउंट सफलतापूर्वक बन गया!");
-            } catch (error) {
-                alert("एरर: " + error.message);
-            }
-        }
+  <!-- Interactive Script -->
+  <script>
+    function openCheckout(name, price) {
+      document.getElementById('modalProductName').innerText = name;
+      document.getElementById('modalProductPrice').innerText = price;
+      document.getElementById('checkoutModal').classList.remove('hidden');
+      document.getElementById('checkoutModal').classList.add('flex');
+    }
 
-        // लॉगिन फंक्शन
-        window.handleLogin = async function() {
-            const email = document.getElementById('login-email').value;
-            const password = document.getElementById('login-password').value;
+    function closeCheckout() {
+      document.getElementById('checkoutModal').classList.add('hidden');
+      document.getElementById('checkoutModal').classList.remove('flex');
+    }
 
-            try {
-                await signInWithEmailAndPassword(auth, email, password);
-                alert("लॉगिन सफल रहा!");
-            } catch (error) {
-                alert("लॉगिन फेल: " + error.message);
-            }
-        }
-
-        // लॉगआउट फंक्शन
-        window.handleLogout = async function() {
-            await signOut(auth);
-            alert("लॉगआउट हो गए!");
-        }
-
-        // फॉलोअर्स बढ़ाने का फंक्शन
-        window.increaseFollowers = async function() {
-            if (!currentUserUid) return;
-            try {
-                const userRef = doc(db, "users", currentUserUid);
-                await updateDoc(userRef, {
-                    followersCount: increment(10)
-                });
-                alert("10 फॉलोअर्स सफलतापूर्वक जोड़ दिए गए हैं!");
-                loadUserData(currentUserUid);
-            } catch (error) {
-                alert("फॉलोअर्स अपडेट करने में एरर: " + error.message);
-            }
-        }
-
-        // यूज़र डेटा लोड करने का फंक्शन
-        async function loadUserData(uid) {
-            const userDoc = await getDoc(doc(db, "users", uid));
-            if (userDoc.exists()) {
-                const data = userDoc.data();
-                document.getElementById('user-display').innerText = data.username || "User";
-                document.getElementById('followers-display').innerText = data.followersCount || 0;
-            }
-        }
-
-        // ऑथेंटिकेशन स्टेट ट्रैक करना
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                currentUserUid = user.uid;
-                document.getElementById('auth-container').classList.add('hidden');
-                document.getElementById('dashboard-container').classList.remove('hidden');
-                loadUserData(user.uid);
-            } else {
-                currentUserUid = null;
-                document.getElementById('auth-container').classList.remove('hidden');
-                document.getElementById('dashboard-container').classList.add('hidden');
-            }
-        });
-    </script>
+    function handlePaymentSubmit(e) {
+      e.preventDefault();
+      alert('Payment details submitted successfully! Your order is being verified.');
+      closeCheckout();
+    }
+  </script>
 </body>
 </html>
