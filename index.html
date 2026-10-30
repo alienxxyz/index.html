@@ -377,9 +377,148 @@
     }
 
     function handleUserSignUp(e) {
-      e.preventDefault();
-      const name = document.getElementById('signupName').value.trim();
-      const email = document.getElementById('signupEmail').value.trim();
-      const phone = document.getElementById('signupPhone').value.trim();
+      
+function handleUserSignUp(e) {
+  e.preventDefault();
 
-      if (!name || !email || !phon
+  const name = document.getElementById('signupName').value.trim();
+  const email = document.getElementById('signupEmail').value.trim();
+  const phone = document.getElementById('signupPhone').value.trim();
+
+  if (!name || !email || !phone) {
+    alert('Please fill in all fields.');
+    return;
+  }
+
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    alert('Enter a valid email address.');
+    return;
+  }
+
+  loggedInUser = { name, email, phone };
+
+  localStorage.setItem('arthik_user', JSON.stringify(loggedInUser));
+
+  updateAuthUI();
+  closeAuthModal();
+  document.getElementById('signupForm').reset();
+
+  alert('Welcome to Arthik Community!');
+}
+
+function handleLogout() {
+  loggedInUser = null;
+  localStorage.removeItem('arthik_user');
+  updateAuthUI();
+  alert('Logged out successfully.');
+}
+
+function loadUserMethods() {
+  const feed = document.getElementById('feedContainer');
+  if (!feed) return;
+
+  let methods = [];
+
+  try {
+    methods = JSON.parse(localStorage.getItem('arthik_methods') || '[]');
+  } catch {
+    methods = [];
+  }
+
+  methods.forEach(method => {
+    const article = document.createElement('article');
+    article.className = 'bg-instaCard border border-instaBorder rounded-xl p-5';
+
+    const heading = document.createElement('h3');
+    heading.className = 'text-white font-bold mb-2';
+    heading.textContent = method.title;
+
+    const content = document.createElement('p');
+    content.className = 'text-xs text-stone-300 whitespace-pre-wrap';
+    content.textContent = method.content;
+
+    article.append(heading, content);
+    feed.appendChild(article);
+  });
+}
+
+function handleMethodUpload(e) {
+  e.preventDefault();
+
+  if (!loggedInUser) {
+    openAuthModal();
+    return;
+  }
+
+  const title = document.getElementById('methodTitleInput').value.trim();
+  const content = document.getElementById('methodContentInput').value.trim();
+
+  if (!title || !content) return;
+
+  let methods = [];
+
+  try {
+    methods = JSON.parse(localStorage.getItem('arthik_methods') || '[]');
+  } catch {
+    methods = [];
+  }
+
+  methods.unshift({ title, content, author: loggedInUser.name });
+  localStorage.setItem('arthik_methods', JSON.stringify(methods));
+
+  const article = document.createElement('article');
+  article.className = 'bg-instaCard border border-instaBorder rounded-xl p-5';
+
+  const heading = document.createElement('h3');
+  heading.className = 'text-white font-bold mb-2';
+  heading.textContent = title;
+
+  const paragraph = document.createElement('p');
+  paragraph.className = 'text-xs text-stone-300 whitespace-pre-wrap';
+  paragraph.textContent = content;
+
+  article.append(heading, paragraph);
+  document.getElementById('feedContainer').prepend(article);
+
+  document.getElementById('methodTitleInput').value = '';
+  document.getElementById('methodContentInput').value = '';
+  closeUploadModal();
+
+  alert('Method published!');
+}
+
+function sendChatMessage(e) {
+  e.preventDefault();
+
+  if (!loggedInUser) {
+    openAuthModal();
+    return;
+  }
+
+  const input = document.getElementById('chatInput');
+  const message = input.value.trim();
+
+  if (!message) return;
+
+  const box = document.getElementById('chatMessages');
+  const item = document.createElement('div');
+
+  item.className = 'bg-instaCard border border-instaBorder p-3 rounded-lg';
+
+  const author = document.createElement('strong');
+  author.className = 'text-goldAccent';
+  author.textContent = loggedInUser.name;
+
+  const paragraph = document.createElement('p');
+  paragraph.className = 'text-stone-300 mt-1';
+  paragraph.textContent = message;
+
+  item.append(author, paragraph);
+  box.appendChild(item);
+  box.scrollTop = box.scrollHeight;
+
+  input.value = '';
+          }
+    </script>
+</body>
+</html>
