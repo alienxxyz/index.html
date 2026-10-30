@@ -58,17 +58,6 @@
       border: 1px solid #D4AF37;
       box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
     }
-    .story-ring {
-      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-      padding: 2px;
-      border-radius: 50%;
-    }
-    .owner-story-ring {
-      background: linear-gradient(45deg, #D4AF37 0%, #FFD700 50%, #FFA500 100%);
-      padding: 2px;
-      border-radius: 50%;
-      box-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
-    }
   </style>
 </head>
 <body class="text-stone-200 antialiased selection:bg-goldAccent selection:text-black">
@@ -78,7 +67,7 @@
     <div class="max-w-5xl mx-auto flex items-center justify-between">
       <a href="#" class="flex items-center gap-2">
         <span class="font-serif text-2xl font-extrabold tracking-wide text-white">
-          𝑨𝒓𝒕𝒉𝒊𝒌 <span class="text-goldAccent italic font-normal">𝑪𝒐ｍｍ𝒖𝒏𝒊𝒕𝒚</span>
+          𝑨𝒓𝒕𝒉𝒊𝒌 <span class="text-goldAccent italic font-normal">𝑪𝒐𝒎𝒎𝒖𝒏𝒊𝒕𝒚</span>
         </span>
       </a>
 
@@ -120,7 +109,7 @@
             ✍️
           </div>
           <div class="w-full">
-            <textarea id="quickMethodInput" onclick="openUploadModal()" placeholder="What new method or strategy do you want to share today?..." class="w-full bg-black border border-instaBorder rounded-xl p-3 text-xs text-white focus:outline-none resize-none h-16 cursor-pointer" readonly></textarea>
+            <textarea onclick="openUploadModal()" placeholder="What new method or strategy do you want to share today?..." class="w-full bg-black border border-instaBorder rounded-xl p-3 text-xs text-white focus:outline-none resize-none h-16 cursor-pointer" readonly></textarea>
             <div class="flex justify-between items-center mt-2">
               <span class="text-[10px] text-stone-500">Share financial tips instantly</span>
               <button onclick="openUploadModal()" class="px-4 py-1.5 bg-goldAccent hover:bg-goldHover text-black text-xs font-bold rounded-lg transition">
@@ -131,15 +120,12 @@
         </div>
       </div>
 
-      <!-- Feed Container (Dynamic Uploads & Posts) -->
+      <!-- Feed Container -->
       <div id="feedContainer" class="space-y-6">
-        <!-- Default Post -->
         <article class="bg-instaCard border border-instaBorder rounded-xl overflow-hidden">
           <div class="p-3.5 flex items-center justify-between border-b border-instaBorder">
             <div class="flex items-center gap-3">
-              <div class="owner-story-ring w-9 h-9 flex items-center justify-center bg-black">
-                <div class="w-8 h-8 rounded-full bg-goldAccent/20 flex items-center justify-center text-goldAccent text-xs font-bold">👑</div>
-              </div>
+              <div class="w-9 h-9 rounded-full bg-goldAccent/20 flex items-center justify-center text-goldAccent font-bold text-xs">👑</div>
               <div>
                 <span class="text-xs font-bold text-white flex items-center gap-2">
                   ArthikAdmin <span class="owner-badge">𝐎ᴡɴᴇʀ 🔌</span>
@@ -150,7 +136,7 @@
           </div>
           <div class="p-5 text-sm text-stone-200 bg-black/50 border-b border-instaBorder">
             <p class="font-serif text-base text-goldAccent font-bold mb-2">"𝑾𝒆𝒍𝒄𝒐𝒎𝒆 𝒕𝒐 𝑨𝒓𝒕𝒉𝒊𝒌 𝑪𝒐𝒎𝒎𝒖𝒏𝒊𝒕𝒚"</p>
-            <p class="text-xs text-stone-300">Use the <b>"Upload New Methods"</b> button above to publish your methods directly to this community feed. Sign up with your Gmail and phone number to unlock full access!</p>
+            <p class="text-xs text-stone-300">Sign up using your Gmail and phone number to unlock full posting and chat access!</p>
           </div>
         </article>
       </div>
@@ -211,9 +197,7 @@
         <div id="sidebarMembers" class="space-y-3">
           <div class="flex items-center justify-between text-xs">
             <div class="flex items-center gap-2">
-              <div class="owner-story-ring w-7 h-7 flex items-center justify-center bg-black">
-                <div class="w-6 h-6 rounded-full bg-goldAccent/20 flex items-center justify-center text-[10px]">👑</div>
-              </div>
+              <div class="w-7 h-7 rounded-full bg-goldAccent/20 flex items-center justify-center text-[10px]">👑</div>
               <span class="font-bold text-white">ArthikAdmin</span>
             </div>
             <span class="owner-badge">𝐎ᴡɴᴇʀ 🔌</span>
@@ -223,7 +207,7 @@
     </div>
   </main>
 
-  <!-- TWITTER/X STYLE "UPLOAD NEW METHODS" MODAL -->
+  <!-- UPLOAD MODAL -->
   <div id="uploadModal" class="fixed inset-0 bg-black/90 backdrop-blur-md z-50 hidden items-center justify-center p-4">
     <div class="bg-instaCard border border-goldAccent/40 rounded-xl max-w-lg w-full p-5 relative aura-border">
       <button onclick="closeUploadModal()" class="absolute top-4 right-4 text-stone-500 hover:text-white text-lg">
@@ -234,10 +218,10 @@
       </h3>
 
       <form onsubmit="handleMethodUpload(event)" class="space-y-3">
-        <textarea id="methodTitleInput" required placeholder="Title of your method (e.g. Advanced Capital Growth Strategy)..." class="w-full bg-black border border-instaBorder rounded-lg p-3 text-xs text-white focus:outline-none focus:border-goldAccent h-12 resize-none"></textarea>
-        <textarea id="methodContentInput" required placeholder="Write your method details here, add steps, or share valuable insights..." class="w-full bg-black border border-instaBorder rounded-lg p-3 text-xs text-white focus:outline-none focus:border-goldAccent h-28 resize-none"></textarea>
+        <input type="text" id="methodTitleInput" required placeholder="Title of your method..." class="w-full bg-black border border-instaBorder rounded-lg p-3 text-xs text-white focus:outline-none focus:border-goldAccent" />
+        <textarea id="methodContentInput" required placeholder="Write your method details here..." class="w-full bg-black border border-instaBorder rounded-lg p-3 text-xs text-white focus:outline-none focus:border-goldAccent h-28 resize-none"></textarea>
         <div class="flex justify-between items-center pt-2">
-          <span class="text-[10px] text-stone-500">Publicly visible to all members</span>
+          <span class="text-[10px] text-stone-500">Publicly visible</span>
           <button type="submit" class="px-5 py-2 bg-goldAccent hover:bg-goldHover text-black text-xs font-bold rounded-lg transition">
             𝑷𝒖𝒃𝒍𝒊𝒔𝒉 𝑴𝒆𝒕𝒉𝒐𝒅 ⚡
           </button>
@@ -246,27 +230,27 @@
     </div>
   </div>
 
-  <!-- SIGN UP / LOGIN MODAL (Gmail & Phone Number) -->
+  <!-- SIGN UP / LOGIN MODAL -->
   <div id="authModal" class="fixed inset-0 bg-black/90 backdrop-blur-md z-50 hidden items-center justify-center p-4">
     <div class="bg-instaCard border border-goldAccent/40 rounded-xl max-w-md w-full p-6 relative aura-border">
       <button onclick="closeAuthModal()" class="absolute top-4 right-4 text-stone-500 hover:text-white text-lg">
         <i class="fa-solid fa-xmark"></i>
       </button>
       <h3 class="text-xl font-bold text-white mb-1">𝑴𝒆𝒎𝒃𝒆𝒓 𝑺𝒊𝒈𝒏 𝑼𝒑 📝</h3>
-      <p class="text-xs text-goldAccent mb-6">Enter your Gmail & Phone Number to unlock community chat & posting.</p>
+      <p class="text-xs text-goldAccent mb-6">Enter your Gmail & Phone Number to unlock community chat.</p>
 
-      <form onsubmit="handleUserSignUp(event)" class="space-y-4">
+      <form id="signupForm" onsubmit="handleUserSignUp(event)" class="space-y-4">
         <div>
           <label class="block text-[10px] uppercase tracking-widest text-stone-400 mb-1">Display Name</label>
-          <input type="text" id="signupName" required placeholder="e.g. ArthikAdmin" class="w-full bg-black border border-instaBorder rounded-lg px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-goldAccent" />
+          <input type="text" id="signupName" required placeholder="e.g. Rahul Sharma" class="w-full bg-black border border-instaBorder rounded-lg px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-goldAccent" />
         </div>
         <div>
           <label class="block text-[10px] uppercase tracking-widest text-stone-400 mb-1">Gmail Address</label>
-          <input type="email" id="signupEmail" required placeholder="arthikportals@gmail.com" class="w-full bg-black border border-instaBorder rounded-lg px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-goldAccent" />
+          <input type="email" id="signupEmail" required placeholder="name@gmail.com" class="w-full bg-black border border-instaBorder rounded-lg px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-goldAccent" />
         </div>
         <div>
           <label class="block text-[10px] uppercase tracking-widest text-stone-400 mb-1">Phone Number</label>
-          <input type="tel" id="signupPhone" required placeholder="+91 97958..." class="w-full bg-black border border-instaBorder rounded-lg px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-goldAccent" />
+          <input type="tel" id="signupPhone" required placeholder="+91 98765..." class="w-full bg-black border border-instaBorder rounded-lg px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-goldAccent" />
         </div>
         <button type="submit" class="w-full bg-goldAccent hover:bg-goldHover text-black font-bold py-3 text-xs uppercase tracking-widest rounded-lg transition">
           𝑺𝒊𝒈𝒏 𝑼𝒑 & 𝑱𝒐𝒊𝒏 𝑪𝒉𝒂𝒕 ⚡
@@ -289,7 +273,7 @@
       const statusText = document.getElementById('groupStatus');
       const userSide = document.getElementById('userProfileSide');
 
-      if (loggedInUser) {
+      if (loggedInUser && loggedInUser.name) {
         const isOwner = loggedInUser.name.toLowerCase() === 'arthikadmin' || loggedInUser.phone === '+919795805641';
         const badgeHTML = isOwner ? ' <span class="owner-badge">𝐎ᴡɴᴇʀ 🔌</span>' : '';
         
@@ -327,6 +311,7 @@
     }
 
     function toStylishFont(str) {
+      if(!str) return '';
       const map = {
         'a':'𝒂','b':'𝒃','c':'𝒄','d':'𝒅','e':'𝒆','f':'𝒇','g':'𝒈','h':'𝒉','i':'𝒊','j':'𝒋','k':'𝒌','l':'𝒍','m':'𝒎',
         'n':'𝒏','o':'𝒐','p':'𝒑','q':'𝒒','r':'𝒓','s':'𝒔','t':'𝒕','u':'𝒖','v':'𝒗','w':'𝒘','x':'𝒙','y':'𝒚','z':'𝒛',
@@ -364,9 +349,14 @@
 
     function handleUserSignUp(e) {
       e.preventDefault();
-      const name = document.getElementById('signupName').value;
-      const email = document.getElementById('signupEmail').value;
-      const phone = document.getElementById('signupPhone').value;
+      const name = document.getElementById('signupName').value.trim();
+      const email = document.getElementById('signupEmail').value.trim();
+      const phone = document.getElementById('signupPhone').value.trim();
+
+      if (!name || !email || !phone) {
+        alert('Please fill in all fields!');
+        return;
+      }
 
       loggedInUser = { name, email, phone };
       localStorage.setItem('arthik_user', JSON.stringify(loggedInUser));
@@ -378,8 +368,10 @@
 
     function handleMethodUpload(e) {
       e.preventDefault();
-      const title = document.getElementById('methodTitleInput').value;
-      const content = document.getElementById('methodContentInput').value;
+      const title = document.getElementById('methodTitleInput').value.trim();
+      const content = document.getElementById('methodContentInput').value.trim();
+
+      if (!title || !content) return;
 
       const newMethod = {
         name: loggedInUser.name,
@@ -394,4 +386,20 @@
       localStorage.setItem('arthik_methods', JSON.stringify(userMethods));
 
       document.getElementById('methodTitleInput').value = '';
-      document.getEle
+      document.getElementById('methodContentInput').value = '';
+      closeUploadModal();
+      loadUserMethods();
+      alert('Method uploaded successfully to the public feed! ⚡');
+    }
+
+    function loadUserMethods() {
+      const feedContainer = document.getElementById('feedContainer');
+      let userMethods = JSON.parse(localStorage.getItem('arthik_methods') || '[]');
+      
+      let html = '';
+      userMethods.forEach(m => {
+        const isOwner = m.name.toLowerCase() === 'arthikadmin' || m.phone === '+919795805641';
+        const badgeHTML = isOwner ? ' <span class="owner-badge">𝐎ᴡɴᴇʀ 🔌</span>' : '';
+        
+        html += `
+          <article class="bg-instaCard border border-instaBorder rounded-xl overflow-hidden aura
